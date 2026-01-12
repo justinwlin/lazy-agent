@@ -20,9 +20,14 @@ A self-guided wizard to set up your development environment, powered by Claude C
    claude
    ```
 
-4. **Edit `config.json`** with your name and preferences
+4. **Copy the example config**:
+   ```bash
+   cp config.example.json config.json
+   ```
 
-5. **Run Claude Code and say**: "help me get started"
+5. **Edit `config.json`** with your name and preferences
+
+6. **Run Claude Code and say**: "help me get started"
 
 Claude will read your config and guide you through a personalized setup.
 
@@ -63,7 +68,7 @@ Then open http://localhost:3000 in your browser.
 ```
 hello-claude/
 ├── CLAUDE.md           # Instructions for Claude (the wizard brain)
-├── config.json         # Personalization config (edit this!)
+├── config.example.json # Example config (copy to config.json)
 ├── README.md           # You are here
 ├── steps/              # Step-by-step setup guides
 │   ├── 01-prerequisites.md

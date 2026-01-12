@@ -16,7 +16,7 @@ We'll create a Node.js server that serves the tmux tutorial.
 ```bash
 # Open Ghostty
 # Create a new tmux session for this project
-tmux new -s hello-josh
+tmux new -s hello-claude
 
 # Split into panes:
 # Ctrl+b | (vertical split)
@@ -36,7 +36,7 @@ tmux new -s hello-josh
 In the left pane (your Claude pane):
 
 ```bash
-cd ~/Developer/work/hello-josh/tmux-tutorial
+cd ~/Developer/work/hello-claude/tmux-tutorial
 ```
 
 ### Step 3: Start Claude Code

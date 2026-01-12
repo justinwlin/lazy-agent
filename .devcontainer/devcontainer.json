@@ -1,5 +1,5 @@
 {
-  "name": "Hello Josh - Claude Code Onboarding Test",
+  "name": "Hello Claude - Claude Code Onboarding Test",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
