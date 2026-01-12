@@ -74,6 +74,7 @@ Read these in order (skip completed steps):
 9. `steps/09-playwright.md` - Browser automation with Playwright
 10. `steps/10-gcalcli.md` - Google Calendar CLI **[OPTIONAL]**
 11. `steps/11-terminal-power-tools.md` - Terminal power tools (fzf, bat, eza, jq, httpie) **[QUICK]**
+12. `steps/12-notion-mcp.md` - Notion MCP integration **[RECOMMENDED]**
 
 ### Handling Optional vs Quick Steps
 

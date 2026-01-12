@@ -83,7 +83,8 @@ hello-claude/
 │   ├── 08-linear-and-mcp.md
 │   ├── 09-playwright.md
 │   ├── 10-gcalcli.md         # [OPTIONAL] - Claude asks first
-│   └── 11-terminal-power-tools.md  # [QUICK] - Recommended for all
+│   ├── 11-terminal-power-tools.md  # [QUICK] - Recommended for all
+│   └── 12-notion-mcp.md          # [RECOMMENDED] - Notion integration
 ├── tmux-tutorial/      # Interactive web tutorial
 │   ├── src/
 │   ├── public/
