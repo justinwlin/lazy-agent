@@ -1,4 +1,4 @@
-# Hello Josh - Claude Code Onboarding
+# Hello Claude - Claude Code Onboarding
 
 A self-guided wizard to set up your development environment, powered by Claude Code.
 
