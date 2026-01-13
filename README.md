@@ -15,19 +15,20 @@ A self-guided wizard to set up your development environment, powered by Claude C
    cd hello-claude
    ```
 
-3. **Run Claude Code**:
-   ```bash
-   claude
-   ```
+3. **Create your personalized config** (choose one):
 
-4. **Copy the example config**:
+   **Option A: Let Notion fill it out for you (recommended)**
+   - Copy the contents of `config.example.json` into a new Notion page
+   - Ask Claude with Notion MCP: "Look at my Notion profile and fill out this config for me"
+   - Save the result as `config.json` in this directory
+
+   **Option B: Manual setup**
    ```bash
    cp config.example.json config.json
+   # Edit config.json with your name and preferences
    ```
 
-5. **Edit `config.json`** with your name and preferences
-
-6. **Run Claude Code and say**: "help me get started"
+4. **Run Claude Code and say**: "help me get started"
 
 Claude will read your config and guide you through a personalized setup.
 
