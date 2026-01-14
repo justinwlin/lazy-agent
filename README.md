@@ -42,10 +42,15 @@ Claude will read your config and guide you through a personalized setup.
 - **Karabiner-Elements** - Caps Lock → Escape/Ctrl (game changer for vim/tmux)
 - **Terminal Power Tools** - fzf, bat, eza, jq, httpie
 
+### Developer Tools
+- **lazygit** - Beautiful git TUI
+- **GitHub CLI** - PRs, issues, actions from terminal
+- **Browser Agent** - AI-friendly browser automation
+- **Docker** - Container runtime
+
 ### Optional Integrations
 - **Notion MCP** - Let Claude search your Notion docs
 - **Linear MCP** - Let Claude manage Linear issues
-- **Playwright** - Browser automation
 - **gcalcli** - Google Calendar in terminal
 
 ### Multi-Agent Tools
@@ -76,6 +81,7 @@ Then open http://localhost:3000 in your browser.
 ```
 lazy-agent/
 ├── setup.sh            # Interactive setup wizard
+├── doctor.sh           # Check what's installed
 ├── update.sh           # Pull updates and refresh configs
 ├── CLAUDE.md           # Instructions for Claude (the wizard brain)
 ├── config.example.json # Example config (copy to config.json)
@@ -111,6 +117,14 @@ Just ask Claude! That's the whole point.
 If Claude Code isn't installed yet, you can:
 - Follow the steps manually in `steps/` directory
 - Check out the [Claude Code documentation](https://docs.anthropic.com/claude-code)
+
+## Check Your Setup
+
+See what's installed and what's missing:
+
+```bash
+./doctor.sh
+```
 
 ## Updating
 

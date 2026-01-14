@@ -9,6 +9,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
 CYAN='\033[0;36m'
+DIM='\033[2m'
 NC='\033[0m'
 
 echo ""
@@ -55,7 +56,7 @@ NAME=$(prompt "What's your name?" "Developer")
 
 echo ""
 echo -e "${CYAN}=== Core Setup ===${NC}"
-echo "These are installed for everyone:"
+echo -e "${DIM}These are installed for everyone (~10 min total):${NC}"
 echo "  - Ghostty (terminal emulator)"
 echo "  - Zsh + Oh My Zsh + Powerlevel10k"
 echo "  - tmux (terminal multiplexer)"
@@ -63,27 +64,50 @@ echo "  - Claude Code"
 echo ""
 
 echo -e "${CYAN}=== Keyboard Optimization ===${NC}"
-INSTALL_KARABINER=$(confirm "Install Karabiner? (Caps Lock → Escape/Ctrl, great for vim/tmux)")
+echo -e "${DIM}~2 min install, requires granting permissions${NC}"
+INSTALL_KARABINER=$(confirm "Install Karabiner? (Caps Lock → Escape/Ctrl)")
 
 echo ""
 echo -e "${CYAN}=== Terminal Enhancements ===${NC}"
-INSTALL_POWERTOOLS=$(confirm "Install terminal power tools? (fzf, bat, eza, jq, httpie)")
+echo -e "${DIM}~1 min, just brew installs${NC}"
+INSTALL_POWERTOOLS=$(confirm "Install power tools? (fzf, bat, eza, jq, httpie)")
 
 echo ""
 echo -e "${CYAN}=== Optional Integrations ===${NC}"
-INSTALL_NOTION=$(confirm "Do you use Notion? (enables Claude to search your docs)")
-INSTALL_LINEAR=$(confirm "Do you use Linear? (enables Claude to manage issues)")
+
+echo -e "${DIM}~1 min, uses browser OAuth (no API keys needed)${NC}"
+INSTALL_NOTION=$(confirm "Notion integration? (Claude can search your docs)")
+
+echo -e "${DIM}~1 min, uses browser OAuth (no API keys needed)${NC}"
+INSTALL_LINEAR=$(confirm "Linear integration? (Claude can manage issues)")
 
 echo ""
 echo -e "${CYAN}=== Developer Tools ===${NC}"
-INSTALL_PLAYWRIGHT=$(confirm "Install Playwright? (browser automation)")
-INSTALL_GCALCLI=$(confirm "Install gcalcli? (Google Calendar in terminal)")
+
+echo -e "${DIM}~1 min, beautiful git TUI${NC}"
+INSTALL_LAZYGIT=$(confirm "lazygit? (terminal UI for git)")
+
+echo -e "${DIM}~1 min, already have it? we'll skip${NC}"
+INSTALL_GH=$(confirm "GitHub CLI? (gh - for PRs, issues, actions)")
+
+echo -e "${DIM}~2 min, Playwright-based browser automation for AI${NC}"
+INSTALL_BROWSER_AGENT=$(confirm "Browser Agent? (AI-friendly browser automation)")
+
+echo -e "${DIM}~3 min if not installed${NC}"
+INSTALL_DOCKER=$(confirm "Docker? (container runtime)")
+
+echo -e "${DIM}⚠️  ~5-10 min, requires Google Cloud Console OAuth setup${NC}"
+INSTALL_GCALCLI=$(confirm "gcalcli? (Google Calendar in terminal)")
 
 echo ""
 echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"
-echo "These help coordinate multiple Claude sessions:"
-INSTALL_GASTOWN=$(confirm "Install Gastown? (multi-agent workspace coordination)")
-INSTALL_BEADS=$(confirm "Install Beads? (git-backed issue tracking)")
+echo -e "${DIM}For coordinating multiple Claude sessions${NC}"
+
+echo -e "${DIM}~1 min, Go install${NC}"
+INSTALL_GASTOWN=$(confirm "Gastown? (multi-agent workspace coordination)")
+
+echo -e "${DIM}~1 min, Go install${NC}"
+INSTALL_BEADS=$(confirm "Beads? (git-backed issue tracking)")
 
 # Generate config.json
 echo ""
@@ -102,7 +126,10 @@ cat > config.json << EOF
     "optional_tools": {
       "karabiner": $INSTALL_KARABINER,
       "terminal_power_tools": $INSTALL_POWERTOOLS,
-      "playwright": $INSTALL_PLAYWRIGHT,
+      "lazygit": $INSTALL_LAZYGIT,
+      "gh_cli": $INSTALL_GH,
+      "browser_agent": $INSTALL_BROWSER_AGENT,
+      "docker": $INSTALL_DOCKER,
       "gcalcli": $INSTALL_GCALCLI,
       "gastown": $INSTALL_GASTOWN,
       "beads": $INSTALL_BEADS,
@@ -119,6 +146,29 @@ cat > config.json << EOF
 EOF
 
 echo -e "${GREEN}Created config.json${NC}"
+
+# Summary
+echo ""
+echo -e "${CYAN}=== Summary ===${NC}"
+TOTAL_TIME=10
+[ "$INSTALL_KARABINER" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 2))
+[ "$INSTALL_POWERTOOLS" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_LAZYGIT" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_GH" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_BROWSER_AGENT" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 2))
+[ "$INSTALL_DOCKER" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 3))
+[ "$INSTALL_GCALCLI" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 7))
+[ "$INSTALL_GASTOWN" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_BEADS" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+
+echo -e "Estimated setup time: ${GREEN}~${TOTAL_TIME} minutes${NC}"
+
+if [ "$INSTALL_GCALCLI" = "true" ]; then
+    echo ""
+    echo -e "${YELLOW}Note: gcalcli requires creating a Google Cloud OAuth app.${NC}"
+    echo -e "${YELLOW}Claude will walk you through this step-by-step.${NC}"
+fi
+
 echo ""
 
 # Install dotfiles
@@ -143,5 +193,5 @@ echo ""
 echo "  2. Say:"
 echo -e "     ${CYAN}help me get started${NC}"
 echo ""
-echo "Claude will guide you through installing everything else."
+echo "Claude will guide you through installing everything."
 echo ""

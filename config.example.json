@@ -10,7 +10,10 @@
     "optional_tools": {
       "karabiner": false,
       "terminal_power_tools": true,
-      "playwright": false,
+      "lazygit": false,
+      "gh_cli": false,
+      "browser_agent": false,
+      "docker": false,
       "gcalcli": false,
       "gastown": false,
       "beads": false,
