@@ -88,17 +88,34 @@ Ask: "Did zoom toggle on and off?"
 
 ### Part 6: Multiple Sessions
 
-Say: "tmux can run multiple sessions. Let's create more:"
+First, check what sessions they currently have:
 
-First detach: `PREFIX` then `d`
-
-Then create new sessions:
 ```bash
-tmux new -s project2
-tmux new -s coding
+tmux ls
 ```
 
-Say: "Now you have 3 sessions running in the background."
+Say: "You currently have [X] session(s) running. Let's create more WITHOUT leaving this one."
+
+Say: "The `-d` flag creates sessions in the background. Try creating a test session:"
+
+```bash
+tmux new-session -d -s test-session
+```
+
+Say: "Now check your sessions again:"
+
+```bash
+tmux ls
+```
+
+Ask: "Do you see the new session in the list?"
+
+Say: "You can name sessions anything - usually after projects. For example:"
+```bash
+tmux new-session -d -s my-project
+```
+
+Ask: "Try creating one more with a name you choose. What did you name it?"
 
 ---
 
@@ -126,17 +143,34 @@ Ask: "Try creating a session from one of your projects."
 
 ### Part 9: Detach and Reattach
 
-Say: "Sessions persist even when you disconnect. Detach with:"
-- `PREFIX` then `d`
-
-Say: "You're back in regular terminal, but sessions are still running!"
+Say: "Sessions persist even when you disconnect. But BEFORE we detach, memorize this command:"
 
 ```bash
-tmux ls              # List all sessions
-tmux attach -t NAME  # Reattach to a session
+tmux attach
 ```
 
-Ask: "Can you list and reattach to your sessions?"
+Say: "This is how you get back. Say it out loud: 'tmux attach'"
+
+Ask: "What command do you run to get back into tmux? (Type it to confirm you've got it)"
+
+**WAIT for them to respond with `tmux attach` before continuing!**
+
+Say: "Perfect! Now you're safe to detach. Press:"
+- `PREFIX` then `d`
+
+Say: "You're back in regular terminal. Your sessions are still running! Now get back in:"
+
+```bash
+tmux attach
+```
+
+Say: "If you have multiple sessions, use:"
+```bash
+tmux ls              # List all sessions
+tmux attach -t NAME  # Attach to specific session
+```
+
+Ask: "Did you make it back?"
 
 ---
 
