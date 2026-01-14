@@ -164,17 +164,23 @@ Install with:
 ./dotfiles/install.sh --with-karabiner # Include Karabiner config
 ```
 
-## Tmux Tutorial Server
+## Teaching Tmux Interactively
 
-There's an interactive web tutorial at `tmux-tutorial/`. To use it:
+When users want to learn tmux, teach them hands-on:
 
-```bash
-cd tmux-tutorial
-npm install
-npm run dev
-```
+1. Have them create a session: `tmux new -s learning`
+2. Ask them to try a command: "Press Ctrl+A then | to split vertically"
+3. Confirm it worked: "Do you see two panes?"
+4. Move to the next thing: "Now try Ctrl+h to move left"
 
-This serves a visual guide to the tmux keybindings configured in the dotfiles.
+Key commands to teach:
+- `Ctrl+A |` - Split vertical
+- `Ctrl+A -` - Split horizontal
+- `Ctrl+h/j/k/l` - Navigate panes (vim-style)
+- `Ctrl+A m` - Zoom/unzoom pane
+- `Ctrl+A d` - Detach session
+
+There's also a printable cheatsheet at `reference/tmux-cheatsheet.html`.
 
 ## Gastown Reference
 

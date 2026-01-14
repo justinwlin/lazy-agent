@@ -64,17 +64,14 @@ Claude will read your config and guide you through a personalized setup.
 - How to use Claude Code effectively
 - Terminal productivity tips
 
-## Interactive Tmux Tutorial
+## Learning Tmux
 
-After setup, there's a web-based tutorial for learning tmux:
+Claude teaches you tmux interactively - no separate tutorial needed. Just say:
+- "teach me tmux"
+- "how do I split panes?"
+- "show me the tmux keybindings"
 
-```bash
-cd tmux-tutorial
-npm install
-npm run dev
-```
-
-Then open http://localhost:3000 in your browser.
+There's also a printable cheatsheet at `reference/tmux-cheatsheet.html`.
 
 ## Files in This Repo
 
@@ -97,17 +94,11 @@ lazy-agent/
 │   ├── 03-zsh-and-p10k.md
 │   ├── 04-tmux.md
 │   ├── 05-claude-code.md
-│   ├── 06-first-project.md
-│   ├── 07-gastown.md
-│   ├── 08-linear-and-mcp.md
-│   ├── 09-playwright.md
-│   ├── 10-gcalcli.md              # [OPTIONAL]
-│   ├── 11-terminal-power-tools.md # [QUICK]
-│   ├── 12-notion-mcp.md           # [RECOMMENDED]
-│   └── 13-karabiner.md            # [RECOMMENDED] Caps Lock magic
-├── tmux-tutorial/      # Interactive web tutorial
-├── exercises/          # Practice projects
-└── reference/          # Quick reference cards
+│   └── ...more
+├── reference/          # Cheatsheets and quick reference
+│   ├── tmux-cheatsheet.html
+│   └── tmux-cheatsheet.md
+└── exercises/          # Practice projects
 ```
 
 ## Need Help?
