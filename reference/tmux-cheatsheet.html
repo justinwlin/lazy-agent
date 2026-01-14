@@ -38,14 +38,17 @@
           <h3>The Prefix Key</h3>
           <p>Almost all tmux commands start with the <strong>prefix key</strong>:</p>
           <div class="key-demo">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd>
+            <kbd class="prefix">Caps Lock</kbd> + <kbd>a</kbd>
+            <span style="margin: 0 1rem; color: #666;">or</span>
+            <kbd class="prefix">Ctrl</kbd> + <kbd>a</kbd>
           </div>
           <p>Press and release the prefix, then press the next key.</p>
+          <p class="note">With Karabiner, Caps Lock acts as Ctrl when held.</p>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>r</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>r</kbd>
           </div>
           <div class="description">Reload tmux config</div>
           <div class="note">Shows "Config reloaded!" message</div>
@@ -76,23 +79,31 @@
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>d</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>d</kbd>
           </div>
           <div class="description">Detach from session</div>
           <div class="note">Session keeps running in background!</div>
         </div>
 
-        <div class="keybinding-card">
+        <div class="keybinding-card featured">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>s</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>s</kbd>
           </div>
-          <div class="description">List all sessions</div>
-          <div class="note">Interactive session picker</div>
+          <div class="description">Fuzzy search sessions</div>
+          <div class="note">fzf-powered session switcher</div>
+        </div>
+
+        <div class="keybinding-card featured">
+          <div class="keys">
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>n</kbd>
+          </div>
+          <div class="description">New session from project</div>
+          <div class="note">Fuzzy search directories and create named session</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>$</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>$</kbd>
           </div>
           <div class="description">Rename current session</div>
         </div>
@@ -114,35 +125,35 @@
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>c</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>c</kbd>
           </div>
           <div class="description">Create new window</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>n</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>n</kbd>
           </div>
           <div class="description">Next window</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>p</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>p</kbd>
           </div>
           <div class="description">Previous window</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>0-9</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>0-9</kbd>
           </div>
           <div class="description">Jump to window by number</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>,</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>,</kbd>
           </div>
           <div class="description">Rename current window</div>
         </div>
@@ -171,7 +182,7 @@
 
         <div class="keybinding-card featured">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>|</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>|</kbd>
           </div>
           <div class="description">Split pane vertically</div>
           <div class="note">Creates pane to the right</div>
@@ -179,7 +190,7 @@
 
         <div class="keybinding-card featured">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>-</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>-</kbd>
           </div>
           <div class="description">Split pane horizontally</div>
           <div class="note">Creates pane below</div>
@@ -187,18 +198,18 @@
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>m</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>z</kbd>
           </div>
           <div class="description">Toggle zoom (fullscreen pane)</div>
-          <div class="note">Great for focusing on one pane temporarily</div>
+          <div class="note">z for zoom - great for focusing on one pane</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd>Ctrl</kbd> + <kbd>d</kbd>
+            <code>exit</code>
           </div>
           <div class="description">Close current pane</div>
-          <div class="note">Or just type "exit"</div>
+          <div class="note">Type "exit" to close a pane safely</div>
         </div>
       </section>
 
@@ -270,28 +281,28 @@
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>h</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>h</kbd>
           </div>
           <div class="description">Resize left (5 cells)</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>j</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>j</kbd>
           </div>
           <div class="description">Resize down (5 cells)</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>k</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>k</kbd>
           </div>
           <div class="description">Resize up (5 cells)</div>
         </div>
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>l</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>l</kbd>
           </div>
           <div class="description">Resize right (5 cells)</div>
         </div>
@@ -309,7 +320,7 @@
 
         <div class="keybinding-card">
           <div class="keys">
-            <kbd class="prefix">Ctrl</kbd> + <kbd>b</kbd> <span class="then">then</span> <kbd>[</kbd>
+            <kbd class="prefix">Prefix</kbd> <span class="then">then</span> <kbd>[</kbd>
           </div>
           <div class="description">Enter copy mode</div>
         </div>
@@ -438,13 +449,22 @@
             <li>Split vertically: <kbd>Prefix</kbd> + <kbd>|</kbd></li>
             <li>Split horizontally: <kbd>Prefix</kbd> + <kbd>-</kbd></li>
             <li>Navigate all panes with <kbd>Ctrl</kbd> + <kbd>h/j/k/l</kbd></li>
-            <li>Zoom a pane: <kbd>Prefix</kbd> + <kbd>m</kbd></li>
-            <li>Unzoom: <kbd>Prefix</kbd> + <kbd>m</kbd> again</li>
+            <li>Zoom a pane: <kbd>Prefix</kbd> + <kbd>z</kbd></li>
+            <li>Unzoom: <kbd>Prefix</kbd> + <kbd>z</kbd> again</li>
           </ol>
         </div>
 
         <div class="exercise">
-          <h3>Exercise 3: Windows</h3>
+          <h3>Exercise 3: Session Management</h3>
+          <ol>
+            <li>Create multiple sessions with different names</li>
+            <li>Fuzzy search sessions: <kbd>Prefix</kbd> + <kbd>s</kbd></li>
+            <li>Create session from project: <kbd>Prefix</kbd> + <kbd>n</kbd></li>
+          </ol>
+        </div>
+
+        <div class="exercise">
+          <h3>Exercise 4: Windows</h3>
           <ol>
             <li>Create 3 windows: <kbd>Prefix</kbd> + <kbd>c</kbd> (x3)</li>
             <li>Name them: <kbd>Prefix</kbd> + <kbd>,</kbd></li>
@@ -453,7 +473,7 @@
         </div>
 
         <div class="exercise">
-          <h3>Exercise 4: Resize</h3>
+          <h3>Exercise 5: Resize</h3>
           <ol>
             <li>Create a split: <kbd>Prefix</kbd> + <kbd>|</kbd></li>
             <li>Resize: <kbd>Prefix</kbd> + <kbd>h</kbd> (repeat to keep resizing)</li>

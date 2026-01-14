@@ -17,6 +17,9 @@ You have access to these skills for interactive setup. **Use them** when you rea
 | `/setup-shell` | Setting up Zsh + Oh My Zsh + Powerlevel10k |
 | `/tmux-tutorial` | Teaching tmux after it's installed |
 | `/setup-karabiner` | If user wants Caps Lock → Escape/Ctrl |
+| `/setup-zoxide` | Smarter cd command that learns habits |
+| `/fzf-tips` | Power tips for fuzzy finder |
+| `/setup-glow` | Beautiful markdown viewer for terminal |
 | `/setup-gcalcli` | If user wants Google Calendar CLI |
 | `/setup-linear` | If user wants Linear integration |
 | `/setup-notion` | If user wants Notion integration |
@@ -101,8 +104,16 @@ Check `config.json` for what they want, then set up accordingly:
 
 #### Terminal Power Tools (`optional_tools.terminal_power_tools`)
 ```bash
-brew install fzf bat eza jq httpie
+brew install fzf bat eza jq httpie glow
 ```
+
+Then **use the `/fzf-tips` skill** to teach fzf shortcuts.
+
+#### Zoxide (`optional_tools.zoxide`)
+**Use the `/setup-zoxide` skill** - smarter `cd` that learns your habits.
+
+#### Glow (`optional_tools.glow`)
+**Use the `/setup-glow` skill** - beautiful markdown viewer for terminal.
 
 #### lazygit (`optional_tools.lazygit`)
 ```bash
