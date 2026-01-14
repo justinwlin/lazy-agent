@@ -32,19 +32,25 @@ Claude will read your config and guide you through a personalized setup.
 
 ## What You'll Set Up
 
-- **Ghostty** - A fast, GPU-accelerated terminal emulator
-- **Zsh + Oh My Zsh** - A powerful shell with plugins
-- **Powerlevel10k** - A beautiful, informative prompt
+### Core (Everyone)
+- **Ghostty** - Fast, GPU-accelerated terminal
+- **Zsh + Oh My Zsh + Powerlevel10k** - Beautiful shell with great defaults
 - **tmux** - Terminal multiplexer with vim-style navigation
 - **Claude Code** - AI-powered coding assistant
-- **Gastown** - Multi-agent workspace coordination
+
+### Recommended
+- **Karabiner-Elements** - Caps Lock → Escape/Ctrl (game changer for vim/tmux)
+- **Terminal Power Tools** - fzf, bat, eza, jq, httpie
+
+### Optional Integrations
+- **Notion MCP** - Let Claude search your Notion docs
+- **Linear MCP** - Let Claude manage Linear issues
+- **Playwright** - Browser automation
+- **gcalcli** - Google Calendar in terminal
+
+### Multi-Agent Tools
+- **Gastown** - Coordinate multiple Claude sessions
 - **Beads** - Git-backed issue tracking with Linear sync
-- **Linear MCP** - Claude Code integration with Linear
-- **Notion MCP** - Claude Code integration with Notion
-- **Playwright** - Browser automation and testing
-- **Karabiner-Elements** - Caps Lock → Escape + tmux prefix [RECOMMENDED]
-- **gcalcli** - Google Calendar CLI [OPTIONAL]
-- **Terminal Power Tools** - fzf, bat, eza, jq, httpie [QUICK]
 
 ## What You'll Learn
 

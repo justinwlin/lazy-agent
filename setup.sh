@@ -1,6 +1,6 @@
 #!/bin/bash
 # Lazy Agent - Interactive Setup
-# Run this instead of manually editing config.json
+# Terminal environment for AI-powered development
 
 set -e
 
@@ -8,12 +8,15 @@ set -e
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 YELLOW='\033[1;33m'
-NC='\033[0m' # No Color
+CYAN='\033[0;36m'
+NC='\033[0m'
 
 echo ""
 echo -e "${BLUE}╔═══════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║      ${GREEN}Lazy Agent Setup Wizard${BLUE}          ║${NC}"
 echo -e "${BLUE}╚═══════════════════════════════════════╝${NC}"
+echo ""
+echo "Like LazyVim, but for terminal-based AI workflows."
 echo ""
 
 # Check if gum is installed for pretty prompts
@@ -25,11 +28,10 @@ else
     echo ""
 fi
 
-# Helper function for prompts
+# Helper functions
 prompt() {
     local question="$1"
     local default="$2"
-
     if [ "$USE_GUM" = true ]; then
         gum input --placeholder "$default" --prompt "$question "
     else
@@ -40,7 +42,6 @@ prompt() {
 
 confirm() {
     local question="$1"
-
     if [ "$USE_GUM" = true ]; then
         gum confirm "$question" && echo "true" || echo "false"
     else
@@ -49,40 +50,40 @@ confirm() {
     fi
 }
 
-choose() {
-    local question="$1"
-    shift
-    local options=("$@")
-
-    if [ "$USE_GUM" = true ]; then
-        echo "$question" >&2
-        printf '%s\n' "${options[@]}" | gum choose
-    else
-        echo "$question"
-        select opt in "${options[@]}"; do
-            echo "$opt"
-            break
-        done
-    fi
-}
-
 # Gather info
-echo "Let's personalize your setup..."
-echo ""
-
 NAME=$(prompt "What's your name?" "Developer")
-ROLE=$(choose "What's your role?" "engineering" "product" "design" "leadership")
 
 echo ""
-echo "Which optional tools do you want?"
+echo -e "${CYAN}=== Core Setup ===${NC}"
+echo "These are installed for everyone:"
+echo "  - Ghostty (terminal emulator)"
+echo "  - Zsh + Oh My Zsh + Powerlevel10k"
+echo "  - tmux (terminal multiplexer)"
+echo "  - Claude Code"
 echo ""
 
-INSTALL_GASTOWN=$(confirm "Install Gastown (multi-agent workspaces)?")
-INSTALL_BEADS=$(confirm "Install Beads (git-backed issue tracking)?")
-INSTALL_PLAYWRIGHT=$(confirm "Install Playwright (browser automation)?")
-INSTALL_KARABINER=$(confirm "Install Karabiner (Caps Lock → Escape/Ctrl)?")
-INSTALL_GCALCLI=$(confirm "Install gcalcli (Google Calendar CLI)?")
-INSTALL_POWERTOOLS=$(confirm "Install terminal power tools (fzf, bat, eza)?")
+echo -e "${CYAN}=== Keyboard Optimization ===${NC}"
+INSTALL_KARABINER=$(confirm "Install Karabiner? (Caps Lock → Escape/Ctrl, great for vim/tmux)")
+
+echo ""
+echo -e "${CYAN}=== Terminal Enhancements ===${NC}"
+INSTALL_POWERTOOLS=$(confirm "Install terminal power tools? (fzf, bat, eza, jq, httpie)")
+
+echo ""
+echo -e "${CYAN}=== Optional Integrations ===${NC}"
+INSTALL_NOTION=$(confirm "Do you use Notion? (enables Claude to search your docs)")
+INSTALL_LINEAR=$(confirm "Do you use Linear? (enables Claude to manage issues)")
+
+echo ""
+echo -e "${CYAN}=== Developer Tools ===${NC}"
+INSTALL_PLAYWRIGHT=$(confirm "Install Playwright? (browser automation)")
+INSTALL_GCALCLI=$(confirm "Install gcalcli? (Google Calendar in terminal)")
+
+echo ""
+echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"
+echo "These help coordinate multiple Claude sessions:"
+INSTALL_GASTOWN=$(confirm "Install Gastown? (multi-agent workspace coordination)")
+INSTALL_BEADS=$(confirm "Install Beads? (git-backed issue tracking)")
 
 # Generate config.json
 echo ""
@@ -91,23 +92,22 @@ echo -e "${GREEN}Generating config.json...${NC}"
 cat > config.json << EOF
 {
   "user": {
-    "name": "$NAME",
-    "role": "$ROLE"
+    "name": "$NAME"
   },
   "dotfiles": {
     "use_included": true,
     "install_karabiner": $INSTALL_KARABINER
   },
   "setup": {
-    "skip_steps": [],
     "optional_tools": {
-      "gastown": $INSTALL_GASTOWN,
-      "beads": $INSTALL_BEADS,
-      "linear_mcp": true,
-      "notion_mcp": true,
+      "karabiner": $INSTALL_KARABINER,
+      "terminal_power_tools": $INSTALL_POWERTOOLS,
       "playwright": $INSTALL_PLAYWRIGHT,
       "gcalcli": $INSTALL_GCALCLI,
-      "terminal_power_tools": $INSTALL_POWERTOOLS
+      "gastown": $INSTALL_GASTOWN,
+      "beads": $INSTALL_BEADS,
+      "linear_mcp": $INSTALL_LINEAR,
+      "notion_mcp": $INSTALL_NOTION
     }
   },
   "preferences": {
@@ -121,8 +121,8 @@ EOF
 echo -e "${GREEN}Created config.json${NC}"
 echo ""
 
-# Ask about installing dotfiles now
-if [ "$(confirm "Install dotfiles now?")" = "true" ]; then
+# Install dotfiles
+if [ "$(confirm "Install dotfiles now? (tmux config, Ghostty settings)")" = "true" ]; then
     if [ "$INSTALL_KARABINER" = "true" ]; then
         ./dotfiles/install.sh --with-karabiner
     else
@@ -131,10 +131,17 @@ if [ "$(confirm "Install dotfiles now?")" = "true" ]; then
 fi
 
 echo ""
-echo -e "${GREEN}Setup complete!${NC}"
+echo -e "${GREEN}╔═══════════════════════════════════════╗${NC}"
+echo -e "${GREEN}║           Setup Complete!             ║${NC}"
+echo -e "${GREEN}╚═══════════════════════════════════════╝${NC}"
 echo ""
 echo "Next steps:"
-echo "  1. Run: claude"
-echo "  2. Say: help me get started"
 echo ""
-echo "Claude will guide you through the rest of the setup."
+echo "  1. Start Claude Code:"
+echo -e "     ${CYAN}claude${NC}"
+echo ""
+echo "  2. Say:"
+echo -e "     ${CYAN}help me get started${NC}"
+echo ""
+echo "Claude will guide you through installing everything else."
+echo ""

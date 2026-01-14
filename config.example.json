@@ -1,55 +1,26 @@
 {
   "user": {
-    "name": "YOUR_NAME",
-    "github_username": "",
-    "email": "",
-    "role": "engineering",
-    "team": "platform"
+    "name": "YOUR_NAME"
   },
   "dotfiles": {
     "use_included": true,
     "install_karabiner": false
   },
   "setup": {
-    "skip_steps": [],
     "optional_tools": {
-      "gastown": true,
-      "beads": true,
-      "linear_mcp": true,
-      "notion_mcp": true,
-      "playwright": true,
-      "gcalcli": true,
+      "karabiner": false,
       "terminal_power_tools": true,
-      "figma_mcp": false,
-      "database_tools": false,
-      "docker": false,
-      "aws_cli": false,
-      "terraform": false
+      "playwright": false,
+      "gcalcli": false,
+      "gastown": false,
+      "beads": false,
+      "linear_mcp": false,
+      "notion_mcp": false
     }
-  },
-  "api_keys": {
-    "linear": "${LINEAR_API_KEY}",
-    "notion": "${NOTION_API_KEY}"
   },
   "preferences": {
     "shell": "zsh",
     "editor": "neovim",
     "theme": "dark"
-  },
-  "_role_options": [
-    "engineering",
-    "product",
-    "design",
-    "leadership"
-  ],
-  "_team_examples": [
-    "platform",
-    "growth",
-    "mobile",
-    "infrastructure",
-    "frontend",
-    "backend",
-    "data",
-    "devops"
-  ]
+  }
 }
