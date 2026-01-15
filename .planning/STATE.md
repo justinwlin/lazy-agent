@@ -4,22 +4,22 @@
 
 See: .planning/PROJECT.md (updated 2026-01-15)
 
-**Core value:** Make directory navigation faster for users who want it, without complicating the default setup.
-**Current focus:** Phase 1 — Add zsh-z to setup-shell
+**Core value:** Streamline developer onboarding with essential productivity tools and clear guidance.
+**Current focus:** Milestone v1.1 — Developer Tools
 
 ## Current Position
 
-Phase: 1 of 1 (Add zsh-z to setup-shell) — COMPLETE
-Plan: 01-01 (Add zsh-z section to setup-shell SKILL.md) — COMPLETE
-Status: Project complete
-Last activity: 2026-01-15 — Phase 1 completed
+Phase: 2 of 5 (Add claude-yolo)
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-01-15 — Milestone v1.1 created
 
-Progress: ██████████ 100%
+Progress: ██░░░░░░░░ 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 0
+- Total plans completed: 1
 - Average duration: —
 - Total execution time: 0 hours
 
@@ -27,7 +27,7 @@ Progress: ██████████ 100%
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| — | — | — | — |
+| 1. zsh-z | 1 | — | — |
 
 **Recent Trend:**
 - Last 5 plans: —
@@ -42,6 +42,9 @@ Recent decisions affecting current work:
 
 - Extend setup-shell instead of new skill (zsh-z is shell-related)
 - Manual .zshrc editing (consistent with other Oh My Zsh plugins)
+- claude-yolo: eastlondoner/claude-yolo via npm
+- claude-notify: mylee04/claude-notify via Homebrew (macOS)
+- GSD: glittercowboy/get-shit-done via npx
 
 ### Deferred Issues
 
@@ -51,8 +54,13 @@ None yet.
 
 None yet.
 
+### Roadmap Evolution
+
+- v1.0 zsh-z Support: Phase 1, shipped 2026-01-15
+- v1.1 Developer Tools created: claude-yolo, claude-notify, GSD, onboarding updates (Phases 2-5)
+
 ## Session Continuity
 
 Last session: 2026-01-15
-Stopped at: Project initialization complete
+Stopped at: Milestone v1.1 initialization
 Resume file: None

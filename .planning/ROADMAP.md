@@ -1,18 +1,22 @@
-# Roadmap: Add zsh-z Plugin Support
+# Roadmap: Lazy Agent Enhancements
 
 ## Overview
 
-Simple enhancement to add zsh-z directory jumping plugin documentation to the existing setup-shell skill. Single phase, following established patterns.
+Progressive enhancement of lazy-agent onboarding tool with developer productivity tools: claude-yolo for YOLO mode management, claude-notify for desktop notifications, and Get Shit Done for structured project workflows.
 
 ## Domain Expertise
 
 None
 
+## Milestones
+
+- ✅ **v1.0 zsh-z Support** - Phase 1 (shipped 2026-01-15)
+- 🚧 **v1.1 Developer Tools** - Phases 2-5 (in progress)
+
 ## Phases
 
-- [x] **Phase 1: Add zsh-z to setup-shell** - Update skill with optional plugin documentation
-
-## Phase Details
+<details>
+<summary>✅ v1.0 zsh-z Support (Phase 1) - SHIPPED 2026-01-15</summary>
 
 ### Phase 1: Add zsh-z to setup-shell
 **Goal**: Add zsh-z plugin section to setup-shell skill following existing patterns
@@ -23,8 +27,54 @@ None
 Plans:
 - [x] 01-01: Add zsh-z section to setup-shell SKILL.md
 
+</details>
+
+### 🚧 v1.1 Developer Tools (In Progress)
+
+**Milestone Goal:** Add essential developer productivity tools to onboarding with installation guides and skills
+
+#### Phase 2: Add claude-yolo
+**Goal**: Add claude-yolo wrapper for YOLO mode management with installation and usage docs
+**Depends on**: Phase 1
+**Research**: Unlikely (GitHub docs already reviewed)
+**Plans**: TBD
+
+Plans:
+- [ ] 02-01: TBD (run /gsd:plan-phase 2 to break down)
+
+#### Phase 3: Add claude-notify
+**Goal**: Add claude-notify desktop notifications with installation guide and skill
+**Depends on**: Phase 2
+**Research**: Unlikely (GitHub docs already reviewed)
+**Plans**: TBD
+
+Plans:
+- [ ] 03-01: TBD (run /gsd:plan-phase 3 to break down)
+
+#### Phase 4: Add Get Shit Done
+**Goal**: Add GSD meta-prompting system with installation guide and skill
+**Depends on**: Phase 3
+**Research**: Unlikely (GitHub docs already reviewed)
+**Plans**: TBD
+
+Plans:
+- [ ] 04-01: TBD (run /gsd:plan-phase 4 to break down)
+
+#### Phase 5: Onboarding updates
+**Goal**: Update onboarding wizard and CLAUDE.md to guide users through new tools
+**Depends on**: Phase 4
+**Research**: Unlikely (internal patterns)
+**Plans**: TBD
+
+Plans:
+- [ ] 05-01: TBD (run /gsd:plan-phase 5 to break down)
+
 ## Progress
 
-| Phase | Plans Complete | Status | Completed |
-|-------|----------------|--------|-----------|
-| 1. Add zsh-z to setup-shell | 1/1 | Complete | 2026-01-15 |
+| Phase | Milestone | Plans Complete | Status | Completed |
+|-------|-----------|----------------|--------|-----------|
+| 1. Add zsh-z to setup-shell | v1.0 | 1/1 | Complete | 2026-01-15 |
+| 2. Add claude-yolo | v1.1 | 0/? | Not started | - |
+| 3. Add claude-notify | v1.1 | 0/? | Not started | - |
+| 4. Add Get Shit Done | v1.1 | 0/? | Not started | - |
+| 5. Onboarding updates | v1.1 | 0/? | Not started | - |
