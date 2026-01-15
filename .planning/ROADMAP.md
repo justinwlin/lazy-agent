@@ -11,7 +11,7 @@ None
 ## Milestones
 
 - ✅ **v1.0 zsh-z Support** - Phase 1 (shipped 2026-01-15)
-- 🚧 **v1.1 Developer Tools** - Phases 2-5 (in progress)
+- ✅ **v1.1 Developer Tools** - Phases 2-5 (shipped 2026-01-15)
 
 ## Phases
 
@@ -29,7 +29,8 @@ Plans:
 
 </details>
 
-### 🚧 v1.1 Developer Tools (In Progress)
+<details>
+<summary>✅ v1.1 Developer Tools (Phases 2-5) - SHIPPED 2026-01-15</summary>
 
 **Milestone Goal:** Add essential developer productivity tools to onboarding with installation guides and skills
 
@@ -40,7 +41,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 02-01: Create setup-claude-yolo skill and update config
+- [x] 02-01: Create setup-claude-yolo skill and update config
 
 #### Phase 3: Add claude-notify
 **Goal**: Add claude-notify desktop notifications with installation guide and skill
@@ -49,7 +50,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 03-01: Create setup-claude-notify skill and update onboard
+- [x] 03-01: Create setup-claude-notify skill and update onboard
 
 #### Phase 4: Add Get Shit Done
 **Goal**: Add GSD meta-prompting system with installation guide and skill
@@ -58,7 +59,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 04-01: Create setup-gsd skill and update onboard
+- [x] 04-01: Create setup-gsd skill and update onboard
 
 #### Phase 5: Onboarding updates
 **Goal**: Update onboarding wizard and CLAUDE.md to guide users through new tools
@@ -67,14 +68,16 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 05-01: Update CLAUDE.md, config.example.json, and onboard skill
+- [x] 05-01: Update CLAUDE.md, config.example.json, and onboard skill
+
+</details>
 
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 1. Add zsh-z to setup-shell | v1.0 | 1/1 | Complete | 2026-01-15 |
-| 2. Add claude-yolo | v1.1 | 0/1 | Not started | - |
-| 3. Add claude-notify | v1.1 | 0/1 | Not started | - |
-| 4. Add Get Shit Done | v1.1 | 0/1 | Not started | - |
-| 5. Onboarding updates | v1.1 | 0/1 | Not started | - |
+| 2. Add claude-yolo | v1.1 | 1/1 | Complete | 2026-01-15 |
+| 3. Add claude-notify | v1.1 | 1/1 | Complete | 2026-01-15 |
+| 4. Add Get Shit Done | v1.1 | 1/1 | Complete | 2026-01-15 |
+| 5. Onboarding updates | v1.1 | 1/1 | Complete | 2026-01-15 |
