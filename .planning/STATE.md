@@ -10,8 +10,8 @@ See: .planning/PROJECT.md (updated 2026-01-15)
 ## Current Position
 
 Phase: 1 of 1 (Add zsh-z to setup-shell)
-Plan: Not started
-Status: Ready to plan
+Plan: 01-01 (Add zsh-z section to setup-shell SKILL.md)
+Status: Ready to execute
 Last activity: 2026-01-15 — Project initialized
 
 Progress: ░░░░░░░░░░ 0%
