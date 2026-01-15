@@ -98,6 +98,11 @@ check "jq" "jq" "brew install jq (optional)"
 check "httpie" "http" "brew install httpie (optional)"
 
 echo ""
+echo -e "${CYAN}=== Claude Code Extensions ===${NC}"
+check "claude-yolo" "cl" "npm install -g claude-yolo (optional)"
+check "claude-notify" "cn" "brew install mylee04/tap/claude-notify (optional)"
+
+echo ""
 echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"
 check "Gastown" "gt" "go install github.com/steveyegge/gastown/cmd/gt@latest (optional)"
 check "Beads" "bd" "brew install steveyegge/beads/bd (optional)"

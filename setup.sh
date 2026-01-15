@@ -100,6 +100,18 @@ echo -e "${DIM}⚠️  ~5-10 min, requires Google Cloud Console OAuth setup${NC}
 INSTALL_GCALCLI=$(confirm "gcalcli? (Google Calendar in terminal)")
 
 echo ""
+echo -e "${CYAN}=== Claude Code Extensions ===${NC}"
+
+echo -e "${DIM}~1 min, npm install${NC}"
+INSTALL_CLAUDE_YOLO=$(confirm "claude-yolo? (YOLO mode wrapper for unattended execution)")
+
+echo -e "${DIM}~1 min, Homebrew install${NC}"
+INSTALL_CLAUDE_NOTIFY=$(confirm "claude-notify? (Desktop notifications when Claude finishes)")
+
+echo -e "${DIM}~1 min, npx install${NC}"
+INSTALL_GSD=$(confirm "Get Shit Done? (Meta-prompting for structured projects)")
+
+echo ""
 echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"
 echo -e "${DIM}For coordinating multiple Claude sessions${NC}"
 
@@ -131,6 +143,9 @@ cat > config.json << EOF
       "browser_agent": $INSTALL_BROWSER_AGENT,
       "docker": $INSTALL_DOCKER,
       "gcalcli": $INSTALL_GCALCLI,
+      "claude_yolo": $INSTALL_CLAUDE_YOLO,
+      "claude_notify": $INSTALL_CLAUDE_NOTIFY,
+      "get_shit_done": $INSTALL_GSD,
       "gastown": $INSTALL_GASTOWN,
       "beads": $INSTALL_BEADS,
       "linear_mcp": $INSTALL_LINEAR,
@@ -158,6 +173,9 @@ TOTAL_TIME=10
 [ "$INSTALL_BROWSER_AGENT" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 2))
 [ "$INSTALL_DOCKER" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 3))
 [ "$INSTALL_GCALCLI" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 7))
+[ "$INSTALL_CLAUDE_YOLO" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_CLAUDE_NOTIFY" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_GSD" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_GASTOWN" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_BEADS" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 
