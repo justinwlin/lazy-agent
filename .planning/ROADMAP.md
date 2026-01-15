@@ -10,7 +10,7 @@ None
 
 ## Phases
 
-- [ ] **Phase 1: Add zsh-z to setup-shell** - Update skill with optional plugin documentation
+- [x] **Phase 1: Add zsh-z to setup-shell** - Update skill with optional plugin documentation
 
 ## Phase Details
 
@@ -21,10 +21,10 @@ None
 **Plans**: 1 plan
 
 Plans:
-- [ ] 01-01: Add zsh-z section to setup-shell SKILL.md
+- [x] 01-01: Add zsh-z section to setup-shell SKILL.md
 
 ## Progress
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Add zsh-z to setup-shell | 0/1 | Not started | - |
+| 1. Add zsh-z to setup-shell | 1/1 | Complete | 2026-01-15 |

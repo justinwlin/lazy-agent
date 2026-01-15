@@ -19,9 +19,9 @@ Make directory navigation faster for users who want it, without complicating the
 
 ### Active
 
-- [ ] Add zsh-z documentation to setup-shell skill
-- [ ] Explain how to enable in .zshrc plugins array
-- [ ] Follow existing skill documentation patterns
+- [x] Add zsh-z documentation to setup-shell skill
+- [x] Explain how to enable in .zshrc plugins array
+- [x] Follow existing skill documentation patterns
 
 ### Out of Scope
 
@@ -52,8 +52,8 @@ Make directory navigation faster for users who want it, without complicating the
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Extend setup-shell instead of new skill | zsh-z is shell-related, keeps skills cohesive | — Pending |
-| Manual .zshrc editing | Consistent with other Oh My Zsh plugin guidance | — Pending |
+| Extend setup-shell instead of new skill | zsh-z is shell-related, keeps skills cohesive | ✓ Good |
+| Manual .zshrc editing | Consistent with other Oh My Zsh plugin guidance | ✓ Good |
 | Skip code-simplifier for lazy-agent | It's an autonomous agent for SuperClaude, not onboarding | ✓ Good |
 
 ---
