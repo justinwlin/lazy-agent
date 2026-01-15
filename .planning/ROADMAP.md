@@ -12,6 +12,7 @@ None
 
 - ✅ **v1.0 zsh-z Support** - Phase 1 (shipped 2026-01-15)
 - ✅ **v1.1 Developer Tools** - Phases 2-5 (shipped 2026-01-15)
+- 🚧 **v1.2 Fork Command** - Phases 6-7 (in progress)
 
 ## Phases
 
@@ -72,6 +73,30 @@ Plans:
 
 </details>
 
+### 🚧 v1.2 Fork Command (In Progress)
+
+**Milestone Goal:** Add `/fork` command for spawning multiple parallel Claude instances using mprocs
+
+#### Phase 6: Add mprocs to setup
+**Goal**: Add mprocs to setup.sh wizard and doctor.sh verification
+**Depends on**: Phase 5
+**Requirements**: FORK-01, FORK-02
+**Research**: Unlikely (brew install mprocs)
+**Plans**: 1 plan
+
+Plans:
+- [ ] 06-01: Add mprocs to setup.sh, doctor.sh, config.example.json
+
+#### Phase 7: Create /fork skill
+**Goal**: Create skill that spawns N parallel Claude instances with cloned workspaces
+**Depends on**: Phase 6
+**Requirements**: FORK-03, FORK-04, FORK-05
+**Research**: Unlikely (shell scripting, mprocs docs)
+**Plans**: 1 plan
+
+Plans:
+- [ ] 07-01: Create fork skill with workspace cloning and mprocs integration
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -81,3 +106,5 @@ Plans:
 | 3. Add claude-notify | v1.1 | 1/1 | Complete | 2026-01-15 |
 | 4. Add Get Shit Done | v1.1 | 1/1 | Complete | 2026-01-15 |
 | 5. Onboarding updates | v1.1 | 1/1 | Complete | 2026-01-15 |
+| 6. Add mprocs to setup | v1.2 | 0/1 | Not started | - |
+| 7. Create /fork skill | v1.2 | 0/1 | Not started | - |

@@ -1,60 +1,65 @@
-# Add zsh-z Plugin Support
+# Lazy Agent Enhancements
 
 ## What This Is
 
-Enhancement to lazy-agent that adds zsh-z (directory jumping plugin) as an optional Oh My Zsh plugin. Following the existing pattern of optional tools, this adds documentation and setup guidance for zsh-z integration.
+Ongoing enhancements to lazy-agent - a CLI onboarding wizard for developer terminal setup. Each milestone adds new capabilities.
 
 ## Core Value
 
-Make directory navigation faster for users who want it, without complicating the default setup.
+Streamline developer onboarding with essential productivity tools and clear guidance.
+
+## Milestones
+
+### v1.0 - zsh-z Support (SHIPPED 2026-01-15)
+Added zsh-z directory jumping plugin documentation.
+
+### v1.1 - Developer Tools (SHIPPED 2026-01-15)
+Added claude-yolo alias, claude-notify, Get Shit Done to onboarding.
+
+### v1.2 - Fork Command (CURRENT)
+Add `/fork` command for spawning multiple parallel Claude instances using mproc.
 
 ## Requirements
 
-### Validated
+### v1.2 Active
 
-- ✓ Onboarding wizard guides users through terminal setup — existing
-- ✓ Skills system provides interactive Claude-guided installation — existing
-- ✓ setup-shell skill exists for shell configuration — existing
-- ✓ Optional tools pattern established (config.json toggles) — existing
-
-### Active
-
-- [x] Add zsh-z documentation to setup-shell skill
-- [x] Explain how to enable in .zshrc plugins array
-- [x] Follow existing skill documentation patterns
+- [ ] FORK-01: Add mproc to setup.sh wizard
+- [ ] FORK-02: Add mproc to doctor.sh checks
+- [ ] FORK-03: Create /fork skill for spawning parallel Claude instances
+- [ ] FORK-04: Support syntax: `/fork N [prompt] [optional paths]`
+- [ ] FORK-05: Clone specified folders to temp workspaces for each instance
 
 ### Out of Scope
 
-- Code-simplifier agent — belongs in SuperClaude config, not onboarding tool
-- Automated .zshrc modification — users manually add to plugins array
-- New standalone skill — extend existing setup-shell skill instead
+- GUI for managing forked instances
+- Automatic merging of results from parallel instances
 
 ## Context
 
-**Existing Pattern:**
-- Skills live in `.claude/skills/{name}/SKILL.md`
-- setup-shell skill already exists for shell configuration
-- zsh-z is a built-in Oh My Zsh plugin (no installation needed)
-- Users just need to add `z` to their plugins array in .zshrc
+**mproc:**
+- Terminal multiplexer for running multiple processes
+- GitHub: https://github.com/pterm/mproc (or similar)
+- Allows viewing multiple Claude sessions side-by-side
 
-**zsh-z Plugin:**
-- Tracks most-used directories
-- Jump with `z foo` to go to most frecent directory matching "foo"
-- Part of Oh My Zsh, no separate installation
-- Needs to be enabled in .zshrc: `plugins=(... z)`
+**Use Case:**
+- User wants to explore multiple approaches in parallel
+- `/fork 3 "implement auth" ./src` spawns 3 Claude instances
+- Each works on a cloned copy of ./src
+- User can compare results and pick best approach
 
 ## Constraints
 
-- **Consistency**: Follow existing skill documentation patterns
-- **Scope**: Minimal change - just documentation addition
+- Must work with existing lazy-agent patterns
+- mproc must be optional (graceful fallback if not installed)
+- Cloned workspaces should be in temp directories
 
 ## Key Decisions
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Extend setup-shell instead of new skill | zsh-z is shell-related, keeps skills cohesive | ✓ Good |
-| Manual .zshrc editing | Consistent with other Oh My Zsh plugin guidance | ✓ Good |
-| Skip code-simplifier for lazy-agent | It's an autonomous agent for SuperClaude, not onboarding | ✓ Good |
+| Use mproc for parallel display | Native terminal multiplexing | Pending |
+| Clone to temp directories | Isolate parallel experiments | Pending |
+| Make /fork a skill | Consistent with other Claude commands | Pending |
 
 ---
-*Last updated: 2026-01-15 after initialization*
+*Last updated: 2026-01-15 - v1.2 Fork Command milestone started*

@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-01-15)
 
 **Core value:** Streamline developer onboarding with essential productivity tools and clear guidance.
-**Current focus:** Milestone v1.1 — Developer Tools — COMPLETE
+**Current focus:** Milestone v1.2 — Fork Command
 
 ## Current Position
 
-Phase: 5 of 5 (Onboarding updates) — COMPLETE
-Plan: 05-01 (Update CLAUDE.md, config.example.json, and onboard skill) — COMPLETE
-Status: Milestone v1.1 complete
-Last activity: 2026-01-15 — All phases executed in parallel
+Phase: 6 of 7 (Add mprocs to setup)
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-01-15 — Milestone v1.2 created
 
-Progress: ██████████ 100%
+Progress: ██████████░░ 71% (5/7 phases)
 
 ## Performance Metrics
 
 **Velocity:**
 - Total plans completed: 5
 - Average duration: —
-- Total execution time: ~5 minutes (parallel execution)
+- Total execution time: ~10 minutes
 
 **By Phase:**
 
@@ -41,16 +41,10 @@ Progress: ██████████ 100%
 
 ### Decisions
 
-Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
-
-- Extend setup-shell instead of new skill (zsh-z is shell-related)
-- Manual .zshrc editing (consistent with other Oh My Zsh plugins)
-- claude-yolo: eastlondoner/claude-yolo via npm
-- claude-notify: mylee04/claude-notify via Homebrew (macOS)
-- GSD: glittercowboy/get-shit-done via npx
-- Phases 2-4 executed in parallel (independent skill creation)
-- Phase 5 executed after to consolidate onboarding updates
+- clyolo is a shell alias, not npm package
+- mprocs for parallel Claude display (brew install mprocs)
+- /fork syntax: `/fork N [prompt] [optional paths]`
+- Clone to temp directories for isolation
 
 ### Deferred Issues
 
@@ -64,9 +58,10 @@ None.
 
 - v1.0 zsh-z Support: Phase 1, shipped 2026-01-15
 - v1.1 Developer Tools: Phases 2-5, shipped 2026-01-15
+- v1.2 Fork Command: Phases 6-7, in progress
 
 ## Session Continuity
 
 Last session: 2026-01-15
-Stopped at: Milestone v1.1 complete
+Stopped at: Milestone v1.2 initialization
 Resume file: None
