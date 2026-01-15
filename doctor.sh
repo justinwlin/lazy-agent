@@ -67,7 +67,7 @@ check "Homebrew" "brew" "Install from https://brew.sh" || MISSING=$((MISSING + 1
 check "Git" "git" "brew install git" || MISSING=$((MISSING + 1))
 check "Zsh" "zsh" "brew install zsh" || MISSING=$((MISSING + 1))
 check "tmux" "tmux" "brew install tmux" || MISSING=$((MISSING + 1))
-check "Claude Code" "claude" "npm install -g @anthropic-ai/claude-code" || MISSING=$((MISSING + 1))
+check "Claude Code" "claude" "curl -fsSL https://claude.ai/install.sh | bash" || MISSING=$((MISSING + 1))
 check "Node.js" "node" "brew install node" || MISSING=$((MISSING + 1))
 
 echo ""
@@ -96,6 +96,9 @@ check "bat" "bat" "brew install bat (optional)"
 check "eza" "eza" "brew install eza (optional)"
 check "jq" "jq" "brew install jq (optional)"
 check "httpie" "http" "brew install httpie (optional)"
+check "zoxide" "zoxide" "brew install zoxide (optional)"
+check "glow" "glow" "brew install glow (optional)"
+check "browser-agent" "agent-browser" "npm install -g agent-browser (optional)"
 
 echo ""
 echo -e "${CYAN}=== Claude Code Extensions ===${NC}"

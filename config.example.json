@@ -10,6 +10,7 @@
     "optional_tools": {
       "karabiner": false,
       "terminal_power_tools": true,
+      "zoxide": true,
       "lazygit": false,
       "gh_cli": false,
       "browser_agent": false,

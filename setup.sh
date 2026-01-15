@@ -44,6 +44,7 @@ if [ -f "config.json" ] && command -v jq &> /dev/null; then
     PREV_GSD=$(jq -r '.setup.optional_tools.get_shit_done // false' config.json)
     PREV_GASTOWN=$(jq -r '.setup.optional_tools.gastown // false' config.json)
     PREV_BEADS=$(jq -r '.setup.optional_tools.beads // false' config.json)
+    PREV_ZOXIDE=$(jq -r '.setup.optional_tools.zoxide // false' config.json)
 elif [ -f "config.json" ]; then
     echo -e "${YELLOW}Found config.json but jq not installed. Starting fresh.${NC}"
     echo -e "${DIM}Install jq to preserve previous choices: brew install jq${NC}"
@@ -123,7 +124,10 @@ INSTALL_KARABINER=$(confirm "Install Karabiner? (Caps Lock → Escape/Ctrl)" "$P
 echo ""
 echo -e "${CYAN}=== Terminal Enhancements ===${NC}"
 echo -e "${DIM}~1 min, just brew installs${NC}"
-INSTALL_POWERTOOLS=$(confirm "Install power tools? (fzf, bat, eza, jq, httpie)" "$PREV_POWERTOOLS")
+INSTALL_POWERTOOLS=$(confirm "Install power tools? (fzf, bat, eza, jq, httpie, glow)" "$PREV_POWERTOOLS")
+
+echo -e "${DIM}~30 sec, smarter cd that learns your habits${NC}"
+INSTALL_ZOXIDE=$(confirm "zoxide? (z command - jump to frequently used dirs)" "$PREV_ZOXIDE")
 
 echo ""
 echo -e "${CYAN}=== Optional Integrations ===${NC}"
@@ -191,6 +195,7 @@ cat > config.json << EOF
     "optional_tools": {
       "karabiner": $INSTALL_KARABINER,
       "terminal_power_tools": $INSTALL_POWERTOOLS,
+      "zoxide": $INSTALL_ZOXIDE,
       "lazygit": $INSTALL_LAZYGIT,
       "gh_cli": $INSTALL_GH,
       "browser_agent": $INSTALL_BROWSER_AGENT,
@@ -226,7 +231,7 @@ TOTAL_TIME=10
 [ "$INSTALL_BROWSER_AGENT" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 2))
 [ "$INSTALL_DOCKER" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 3))
 [ "$INSTALL_GCALCLI" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 7))
-[ "$INSTALL_CLAUDE_YOLO" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+# clyolo is just an alias, negligible time
 [ "$INSTALL_CLAUDE_NOTIFY" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_GSD" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_GASTOWN" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
