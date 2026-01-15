@@ -37,44 +37,44 @@ Plans:
 **Goal**: Add claude-yolo wrapper for YOLO mode management with installation and usage docs
 **Depends on**: Phase 1
 **Research**: Unlikely (GitHub docs already reviewed)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 02-01: TBD (run /gsd:plan-phase 2 to break down)
+- [ ] 02-01: Create setup-claude-yolo skill and update config
 
 #### Phase 3: Add claude-notify
 **Goal**: Add claude-notify desktop notifications with installation guide and skill
 **Depends on**: Phase 2
 **Research**: Unlikely (GitHub docs already reviewed)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 03-01: TBD (run /gsd:plan-phase 3 to break down)
+- [ ] 03-01: Create setup-claude-notify skill and update onboard
 
 #### Phase 4: Add Get Shit Done
 **Goal**: Add GSD meta-prompting system with installation guide and skill
 **Depends on**: Phase 3
 **Research**: Unlikely (GitHub docs already reviewed)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 04-01: TBD (run /gsd:plan-phase 4 to break down)
+- [ ] 04-01: Create setup-gsd skill and update onboard
 
 #### Phase 5: Onboarding updates
 **Goal**: Update onboarding wizard and CLAUDE.md to guide users through new tools
 **Depends on**: Phase 4
 **Research**: Unlikely (internal patterns)
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 05-01: TBD (run /gsd:plan-phase 5 to break down)
+- [ ] 05-01: Update CLAUDE.md, config.example.json, and onboard skill
 
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 1. Add zsh-z to setup-shell | v1.0 | 1/1 | Complete | 2026-01-15 |
-| 2. Add claude-yolo | v1.1 | 0/? | Not started | - |
-| 3. Add claude-notify | v1.1 | 0/? | Not started | - |
-| 4. Add Get Shit Done | v1.1 | 0/? | Not started | - |
-| 5. Onboarding updates | v1.1 | 0/? | Not started | - |
+| 2. Add claude-yolo | v1.1 | 0/1 | Not started | - |
+| 3. Add claude-notify | v1.1 | 0/1 | Not started | - |
+| 4. Add Get Shit Done | v1.1 | 0/1 | Not started | - |
+| 5. Onboarding updates | v1.1 | 0/1 | Not started | - |
