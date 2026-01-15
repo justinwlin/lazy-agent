@@ -291,5 +291,18 @@ Once all steps are done:
 3. Practice splitting panes and navigating
 4. Show them how to use Claude Code in tmux
 5. Point them to `reference/tmux-cheatsheet.md` for later
+6. **Offer to teach them about Agent Skills**: "Would you like to learn how I use skills, or create your own custom skills? Run `/agent-skills` anytime!"
 
 Remember: The goal isn't just to install things. It's to help them feel confident and excited about their new setup.
+
+## Learning About Skills
+
+Users interested in extending Claude's capabilities can learn about Agent Skills:
+
+- **`/agent-skills`** - Interactive tutorial about how skills work, real-time explanations of skill discovery, and help creating custom skills
+
+This is great for users who want to:
+- Understand how Claude discovers and uses skills
+- Create custom skills for their workflows
+- Learn the Agent Skills specification
+- See real-time narration of skill usage

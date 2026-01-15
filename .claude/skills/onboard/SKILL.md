@@ -24,6 +24,7 @@ You have access to these skills for interactive setup. **Use them** when you rea
 | `/setup-linear` | If user wants Linear integration |
 | `/setup-notion` | If user wants Notion integration |
 | `/setup-claude-project` | Setting up Claude Code best practices for any project |
+| `/agent-skills` | Learning about skills, creating new skills, understanding skill discovery |
 
 ## Configuration
 
