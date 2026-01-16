@@ -173,8 +173,8 @@ echo ""
 echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"
 echo -e "${DIM}For coordinating multiple Claude sessions${NC}"
 
-echo -e "${DIM}~30 sec, terminal multiplexer for parallel Claude sessions${NC}"
-INSTALL_MPROCS=$(confirm "mprocs? (run multiple processes side-by-side)" "$PREV_MPROCS")
+echo -e "${DIM}~30 sec, enables /fork for parallel Claude instances${NC}"
+INSTALL_MPROCS=$(confirm "mprocs? (run multiple Claude instances side-by-side)" "$PREV_MPROCS")
 
 echo -e "${DIM}~1 min, Go install${NC}"
 INSTALL_GASTOWN=$(confirm "Gastown? (multi-agent workspace coordination)" "$PREV_GASTOWN")
@@ -249,6 +249,12 @@ if [ "$INSTALL_GCALCLI" = "true" ]; then
     echo ""
     echo -e "${YELLOW}Note: gcalcli requires creating a Google Cloud OAuth app.${NC}"
     echo -e "${YELLOW}Claude will walk you through this step-by-step.${NC}"
+fi
+
+if [ "$INSTALL_MPROCS" = "true" ]; then
+    echo ""
+    echo -e "${CYAN}Note: The /fork skill is included in this repo.${NC}"
+    echo -e "${CYAN}After mprocs is installed, use: /fork 3 \"your task\"${NC}"
 fi
 
 echo ""
