@@ -31,7 +31,21 @@ Personalize your responses using this config. For example:
 
 ## How to Guide Users
 
-When a user says "help me get started" or similar, follow this flow:
+When a user says "help me get started" or similar, follow this flow.
+
+### Dry Run Mode
+
+Users can preview the onboarding without making changes:
+
+```
+/onboard --dry-run
+```
+
+In dry-run mode:
+- Show what would be installed/configured
+- Don't execute any commands or invoke skills
+- Prefix actions with `[DRY RUN]`
+- Still run discovery checks (read-only)
 
 ### Phase 1: Discovery
 
@@ -46,6 +60,8 @@ which tmux && echo "Tmux: installed" || echo "Tmux: not installed"
 which nvim && echo "Neovim: installed" || echo "Neovim: not installed"
 ls /Applications/Ghostty.app 2>/dev/null && echo "Ghostty: installed" || echo "Ghostty: not installed"
 ls /Applications/Karabiner-Elements.app 2>/dev/null && echo "Karabiner: installed" || echo "Karabiner: not installed"
+grep -q 'alias clyolo' ~/.zshrc && echo "clyolo alias: installed" || echo "clyolo alias: not installed"
+which cn && echo "claude-notify: installed" || echo "claude-notify: not installed"
 ```
 
 Based on results, customize the journey. Skip steps they've already completed.
@@ -77,6 +93,9 @@ Read these in order (skip completed steps):
 11. `steps/11-terminal-power-tools.md` - Terminal power tools (fzf, bat, eza, jq, httpie) **[QUICK]**
 12. `steps/12-notion-mcp.md` - Notion MCP integration **[RECOMMENDED]**
 13. `steps/13-karabiner.md` - Keyboard customization (Caps Lock → Escape + tmux prefix) **[RECOMMENDED]**
+14. `steps/14-claude-yolo.md` - YOLO mode alias for unattended execution **[QUICK]**
+15. `steps/15-claude-notify.md` - Desktop notifications for long tasks **[RECOMMENDED]**
+16. `steps/16-get-shit-done.md` - Meta-prompting system for structured projects **[OPTIONAL]**
 
 ### Handling Optional vs Quick Steps
 
@@ -131,6 +150,15 @@ http --version
 
 # Karabiner-Elements
 ls /Applications/Karabiner-Elements.app
+
+# clyolo alias
+grep -q 'alias clyolo' ~/.zshrc && echo "clyolo: configured"
+
+# claude-notify
+which cn && cn status
+
+# get-shit-done
+# Verify by running /gsd:help in Claude Code
 ```
 
 ## Handling Problems
@@ -195,6 +223,27 @@ Gastown (`gt`) manages multi-agent workspaces. Key commands:
 | `gt mq` | Merge queue operations |
 
 GitHub: https://github.com/steveyegge/gastown
+
+## /fork - Parallel Exploration
+
+The `/fork` skill spawns multiple Claude instances to explore different approaches in parallel using mprocs.
+
+**Syntax**: `/fork N [prompt] [paths...]`
+
+**Examples**:
+- `/fork 3 "implement auth"` - 3 instances on current directory
+- `/fork 2 "try different approaches" ./src` - 2 instances on specific path
+
+**Requirements**: mprocs (`brew install mprocs`)
+
+**Controls in mprocs**:
+| Key | Action |
+|-----|--------|
+| `Tab` | Switch between instances |
+| `1-6` | Jump to specific instance |
+| `q` | Quit all instances |
+
+Each instance works on an isolated copy of the workspace. After completion, compare results and cherry-pick the best approach.
 
 ## gcalcli Setup - Interactive Walkthrough
 
