@@ -173,6 +173,9 @@ echo ""
 echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"
 echo -e "${DIM}For coordinating multiple Claude sessions${NC}"
 
+echo -e "${DIM}~30 sec, terminal multiplexer for parallel Claude sessions${NC}"
+INSTALL_MPROCS=$(confirm "mprocs? (run multiple processes side-by-side)" "$PREV_MPROCS")
+
 echo -e "${DIM}~1 min, Go install${NC}"
 INSTALL_GASTOWN=$(confirm "Gastown? (multi-agent workspace coordination)" "$PREV_GASTOWN")
 
