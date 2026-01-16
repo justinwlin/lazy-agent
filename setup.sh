@@ -208,6 +208,7 @@ cat > config.json << EOF
       "claude_yolo": $INSTALL_CLAUDE_YOLO,
       "claude_notify": $INSTALL_CLAUDE_NOTIFY,
       "get_shit_done": $INSTALL_GSD,
+      "mprocs": $INSTALL_MPROCS,
       "gastown": $INSTALL_GASTOWN,
       "beads": $INSTALL_BEADS,
       "linear_mcp": $INSTALL_LINEAR,
