@@ -45,6 +45,7 @@ if [ -f "config.json" ] && command -v jq &> /dev/null; then
     PREV_GASTOWN=$(jq -r '.setup.optional_tools.gastown // false' config.json)
     PREV_BEADS=$(jq -r '.setup.optional_tools.beads // false' config.json)
     PREV_ZOXIDE=$(jq -r '.setup.optional_tools.zoxide // false' config.json)
+    PREV_MPROCS=$(jq -r '.setup.optional_tools.mprocs // false' config.json)
 elif [ -f "config.json" ]; then
     echo -e "${YELLOW}Found config.json but jq not installed. Starting fresh.${NC}"
     echo -e "${DIM}Install jq to preserve previous choices: brew install jq${NC}"
