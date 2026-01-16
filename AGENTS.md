@@ -96,6 +96,7 @@ Read these in order (skip completed steps):
 14. `steps/14-claude-yolo.md` - YOLO mode alias for unattended execution **[QUICK]**
 15. `steps/15-claude-notify.md` - Desktop notifications for long tasks **[RECOMMENDED]**
 16. `steps/16-get-shit-done.md` - Meta-prompting system for structured projects **[OPTIONAL]**
+17. `steps/17-fork.md` - Parallel Claude instances with /fork **[QUICK]**
 
 ### Handling Optional vs Quick Steps
 
