@@ -239,6 +239,7 @@ TOTAL_TIME=10
 # clyolo is just an alias, negligible time
 [ "$INSTALL_CLAUDE_NOTIFY" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_GSD" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_MPROCS" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_GASTOWN" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_BEADS" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 
