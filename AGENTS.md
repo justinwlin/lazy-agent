@@ -228,13 +228,19 @@ GitHub: https://github.com/steveyegge/gastown
 
 The `/fork` skill spawns multiple Claude instances to explore different approaches in parallel using mprocs.
 
-**Syntax**: `/fork N [prompt] [paths...]`
+**Syntax**: `/fork N "prompt" [paths...]`
 
 **Examples**:
 - `/fork 3 "implement auth"` - 3 instances on current directory
 - `/fork 2 "try different approaches" ./src` - 2 instances on specific path
 
 **Requirements**: mprocs (`brew install mprocs`)
+
+**How it works**:
+1. Creates git worktrees for each instance (preserves git history)
+2. Launches mprocs inside a detached tmux session
+3. Each Claude runs with `--dangerously-skip-permissions` for unattended execution
+4. Gives you the `tmux attach` command to connect
 
 **Controls in mprocs**:
 | Key | Action |
@@ -243,7 +249,13 @@ The `/fork` skill spawns multiple Claude instances to explore different approach
 | `1-6` | Jump to specific instance |
 | `q` | Quit all instances |
 
-Each instance works on an isolated copy of the workspace. After completion, compare results and cherry-pick the best approach.
+**Adding /fork to your project**:
+```bash
+mkdir -p .claude/skills/fork
+curl -o .claude/skills/fork/SKILL.md https://raw.githubusercontent.com/justinwlin/lazy-agent/main/.claude/skills/fork/SKILL.md
+```
+
+Each instance works on an isolated git worktree. After completion, compare results and cherry-pick the best approach.
 
 ## gcalcli Setup - Interactive Walkthrough
 
