@@ -121,7 +121,7 @@ Check `config.json` for what they want, then set up accordingly:
 
 #### Terminal Power Tools (`optional_tools.terminal_power_tools`)
 ```bash
-brew install fzf bat eza jq httpie glow
+brew install fzf ripgrep bat eza fd zoxide git-delta jq httpie glow
 ```
 
 Then **use the `/fzf-tips` skill** to teach fzf shortcuts.

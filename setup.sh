@@ -70,7 +70,7 @@ INSTALL_KARABINER=$(confirm "Install Karabiner? (Caps Lock → Escape/Ctrl)")
 echo ""
 echo -e "${CYAN}=== Terminal Enhancements ===${NC}"
 echo -e "${DIM}~1 min, just brew installs${NC}"
-INSTALL_POWERTOOLS=$(confirm "Install power tools? (fzf, bat, eza, jq, httpie)")
+INSTALL_POWERTOOLS=$(confirm "Install CLI essentials? (fzf, ripgrep, bat, eza, fd, zoxide, delta, jq, httpie, glow)")
 
 echo -e "${DIM}~30 sec, Oh My Zsh plugin for quick directory jumping${NC}"
 INSTALL_ZSH_Z=$(confirm "zsh-z? (z command - jump to frequently used dirs)")
