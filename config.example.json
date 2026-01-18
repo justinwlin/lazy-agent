@@ -10,7 +10,6 @@
     "optional_tools": {
       "karabiner": false,
       "terminal_power_tools": true,
-      "zoxide": true,
       "lazygit": false,
       "gh_cli": false,
       "browser_agent": false,
@@ -23,7 +22,8 @@
       "gastown": false,
       "beads": false,
       "linear_mcp": false,
-      "notion_mcp": false
+      "notion_mcp": false,
+      "playwright_mcp": false
     }
   },
   "preferences": {

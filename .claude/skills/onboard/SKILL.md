@@ -68,9 +68,10 @@ The config tells you:
 
 ### Phase 1: Discovery
 
-Check what's already installed:
+**IMPORTANT: Always verify before installing.** Check what's already installed first:
 
 ```bash
+# Core tools
 which brew && echo "Homebrew: ✓" || echo "Homebrew: ✗"
 which git && echo "Git: ✓" || echo "Git: ✗"
 which zsh && echo "Zsh: ✓" || echo "Zsh: ✗"
@@ -78,9 +79,23 @@ which tmux && echo "Tmux: ✓" || echo "Tmux: ✗"
 which claude && echo "Claude Code: ✓" || echo "Claude Code: ✗"
 ls /Applications/Ghostty.app 2>/dev/null && echo "Ghostty: ✓" || echo "Ghostty: ✗"
 ls /Applications/Karabiner-Elements.app 2>/dev/null && echo "Karabiner: ✓" || echo "Karabiner: ✗"
+
+# Optional tools
+which fzf && echo "fzf: ✓" || echo "fzf: ✗"
+which lazygit && echo "lazygit: ✓" || echo "lazygit: ✗"
+which gh && echo "GitHub CLI: ✓" || echo "GitHub CLI: ✗"
+which docker && echo "Docker: ✓" || echo "Docker: ✗"
+which agent-browser && echo "Browser Agent: ✓" || echo "Browser Agent: ✗"
+which gcalcli && echo "gcalcli: ✓" || echo "gcalcli: ✗"
+ls ~/.oh-my-zsh/custom/plugins/zsh-z 2>/dev/null && echo "zsh-z: ✓" || echo "zsh-z: ✗"
+
+# MCP servers
+claude mcp list 2>/dev/null | grep -q playwright && echo "Playwright MCP: ✓" || echo "Playwright MCP: ✗"
+claude mcp list 2>/dev/null | grep -q linear && echo "Linear MCP: ✓" || echo "Linear MCP: ✗"
+claude mcp list 2>/dev/null | grep -q notion && echo "Notion MCP: ✓" || echo "Notion MCP: ✗"
 ```
 
-Skip steps they've already completed.
+**Skip steps they've already completed.** Never reinstall something that's already working.
 
 ### Phase 2: Core Setup
 
@@ -131,10 +146,20 @@ Check `config.json` for what they want, then set up accordingly:
 
 #### Terminal Power Tools (`optional_tools.terminal_power_tools`)
 ```bash
-brew install fzf bat eza jq httpie glow
+brew install fzf ripgrep bat eza fd zoxide git-delta jq httpie glow
 ```
 
 Then **use the `/fzf-tips` skill** to teach fzf shortcuts.
+
+#### zsh-z (`optional_tools.zsh_z`)
+Oh My Zsh plugin for quick directory jumping - type `z` followed by part of a directory name to jump there.
+```bash
+git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+```
+Then add `zsh-z` to the plugins array in `~/.zshrc`:
+```bash
+plugins=(git zsh-z)
+```
 
 #### Zoxide (`optional_tools.zoxide`)
 **Use the `/setup-zoxide` skill** - smarter `cd` that learns your habits.
@@ -189,6 +214,12 @@ brew install steveyegge/beads/bd
 
 #### Notion MCP (`optional_tools.notion_mcp`)
 **Use the `/setup-notion` skill**.
+
+#### Playwright MCP (`optional_tools.playwright_mcp`)
+Browser automation MCP server - lets Claude control browsers for testing and web automation.
+```bash
+claude mcp add --scope user playwright -- npx @playwright/mcp
+```
 
 #### clyolo (`optional_tools.claude_yolo`)
 **Use the `/setup-claude-yolo` skill** - adds `clyolo` alias for `claude --dangerously-skip-permissions`.

@@ -79,6 +79,7 @@ echo ""
 echo -e "${CYAN}=== Shell Setup ===${NC}"
 check_file "Oh My Zsh" "$HOME/.oh-my-zsh" "sh -c \"\$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\""
 check_file "Powerlevel10k" "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \${ZSH_CUSTOM:-\$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+check_file "zsh-z plugin" "$HOME/.oh-my-zsh/custom/plugins/zsh-z" "git clone https://github.com/agkozak/zsh-z \${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z (optional)"
 
 echo ""
 echo -e "${CYAN}=== Dotfiles ===${NC}"
@@ -98,8 +99,11 @@ check "jq" "jq" "brew install jq (optional)"
 check "httpie" "http" "brew install httpie (optional)"
 check "zoxide" "zoxide" "brew install zoxide (optional)"
 check "glow" "glow" "brew install glow (optional)"
+check "ripgrep" "rg" "brew install ripgrep (optional)"
+check "fd" "fd" "brew install fd (optional)"
+check "delta" "delta" "brew install git-delta (optional)"
 check "mprocs" "mprocs" "brew install mprocs (optional)"
-check "browser-agent" "agent-browser" "npm install -g agent-browser (optional)"
+check "browser-agent" "agent-browser" "npm install -g @anthropic/agent-browser (optional)"
 
 echo ""
 echo -e "${CYAN}=== Claude Code Extensions ===${NC}"
@@ -133,6 +137,11 @@ if command -v claude &> /dev/null; then
         echo -e "  ${GREEN}✓${NC} Notion MCP"
     else
         echo -e "  ${YELLOW}○${NC} Notion MCP ${DIM}- claude mcp add --transport http notion https://mcp.notion.com/mcp --scope user${NC}"
+    fi
+    if echo "$MCP_LIST" | grep -q "playwright"; then
+        echo -e "  ${GREEN}✓${NC} Playwright MCP"
+    else
+        echo -e "  ${YELLOW}○${NC} Playwright MCP ${DIM}- claude mcp add --scope user playwright -- npx @playwright/mcp${NC}"
     fi
 else
     echo -e "  ${DIM}(install Claude Code first)${NC}"

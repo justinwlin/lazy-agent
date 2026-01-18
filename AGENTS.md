@@ -90,7 +90,7 @@ Read these in order (skip completed steps):
 8. `steps/08-linear-and-mcp.md` - Linear, Beads sync, Linear MCP, Notion MCP
 9. `steps/09-playwright.md` - Browser automation with Playwright
 10. `steps/10-gcalcli.md` - Google Calendar CLI **[OPTIONAL]**
-11. `steps/11-terminal-power-tools.md` - Terminal power tools (fzf, bat, eza, jq, httpie) **[QUICK]**
+11. `steps/11-terminal-power-tools.md` - CLI essentials (fzf, ripgrep, bat, eza, fd, zoxide, delta, jq, httpie, glow) **[QUICK]**
 12. `steps/12-notion-mcp.md` - Notion MCP integration **[RECOMMENDED]**
 13. `steps/13-karabiner.md` - Keyboard customization (Caps Lock → Escape + tmux prefix) **[RECOMMENDED]**
 14. `steps/14-claude-yolo.md` - YOLO mode alias for unattended execution **[QUICK]**
@@ -142,12 +142,17 @@ which claude
 # gcalcli
 which gcalcli
 
-# Terminal power tools
+# CLI essentials
 fzf --version
+rg --version
 bat --version
 eza --version
+fd --version
+zoxide --version
+delta --version
 jq --version
 http --version
+glow --version
 
 # Karabiner-Elements
 ls /Applications/Karabiner-Elements.app

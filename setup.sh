@@ -44,7 +44,6 @@ if [ -f "config.json" ] && command -v jq &> /dev/null; then
     PREV_GSD=$(jq -r '.setup.optional_tools.get_shit_done // false' config.json)
     PREV_GASTOWN=$(jq -r '.setup.optional_tools.gastown // false' config.json)
     PREV_BEADS=$(jq -r '.setup.optional_tools.beads // false' config.json)
-    PREV_ZOXIDE=$(jq -r '.setup.optional_tools.zoxide // false' config.json)
     PREV_MPROCS=$(jq -r '.setup.optional_tools.mprocs // false' config.json)
 elif [ -f "config.json" ]; then
     echo -e "${YELLOW}Found config.json but jq not installed. Starting fresh.${NC}"
@@ -125,10 +124,7 @@ INSTALL_KARABINER=$(confirm "Install Karabiner? (Caps Lock → Escape/Ctrl)" "$P
 echo ""
 echo -e "${CYAN}=== Terminal Enhancements ===${NC}"
 echo -e "${DIM}~1 min, just brew installs${NC}"
-INSTALL_POWERTOOLS=$(confirm "Install power tools? (fzf, bat, eza, jq, httpie, glow)" "$PREV_POWERTOOLS")
-
-echo -e "${DIM}~30 sec, smarter cd that learns your habits${NC}"
-INSTALL_ZOXIDE=$(confirm "zoxide? (z command - jump to frequently used dirs)" "$PREV_ZOXIDE")
+INSTALL_POWERTOOLS=$(confirm "Install CLI essentials? (fzf, ripgrep, bat, eza, fd, zoxide, delta, jq, httpie, glow)" "$PREV_POWERTOOLS")
 
 echo ""
 echo -e "${CYAN}=== Optional Integrations ===${NC}"
@@ -138,6 +134,9 @@ INSTALL_NOTION=$(confirm "Notion integration? (Claude can search your docs)" "$P
 
 echo -e "${DIM}~1 min, uses browser OAuth (no API keys needed)${NC}"
 INSTALL_LINEAR=$(confirm "Linear integration? (Claude can manage issues)" "$PREV_LINEAR")
+
+echo -e "${DIM}~30 sec, browser automation MCP server${NC}"
+INSTALL_PLAYWRIGHT=$(confirm "Playwright MCP? (Claude can control browsers)")
 
 echo ""
 echo -e "${CYAN}=== Developer Tools ===${NC}"
@@ -199,7 +198,6 @@ cat > config.json << EOF
     "optional_tools": {
       "karabiner": $INSTALL_KARABINER,
       "terminal_power_tools": $INSTALL_POWERTOOLS,
-      "zoxide": $INSTALL_ZOXIDE,
       "lazygit": $INSTALL_LAZYGIT,
       "gh_cli": $INSTALL_GH,
       "browser_agent": $INSTALL_BROWSER_AGENT,
@@ -212,7 +210,8 @@ cat > config.json << EOF
       "gastown": $INSTALL_GASTOWN,
       "beads": $INSTALL_BEADS,
       "linear_mcp": $INSTALL_LINEAR,
-      "notion_mcp": $INSTALL_NOTION
+      "notion_mcp": $INSTALL_NOTION,
+      "playwright_mcp": $INSTALL_PLAYWRIGHT
     }
   },
   "preferences": {
