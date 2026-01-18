@@ -111,6 +111,16 @@ brew install fzf bat eza jq httpie glow
 
 Then **use the `/fzf-tips` skill** to teach fzf shortcuts.
 
+#### zsh-z (`optional_tools.zsh_z`)
+Oh My Zsh plugin for quick directory jumping - type `z` followed by part of a directory name to jump there.
+```bash
+git clone https://github.com/agkozak/zsh-z ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-z
+```
+Then add `zsh-z` to the plugins array in `~/.zshrc`:
+```bash
+plugins=(git zsh-z)
+```
+
 #### Zoxide (`optional_tools.zoxide`)
 **Use the `/setup-zoxide` skill** - smarter `cd` that learns your habits.
 
@@ -164,6 +174,12 @@ brew install steveyegge/beads/bd
 
 #### Notion MCP (`optional_tools.notion_mcp`)
 **Use the `/setup-notion` skill**.
+
+#### Playwright MCP (`optional_tools.playwright_mcp`)
+Browser automation MCP server - lets Claude control browsers for testing and web automation.
+```bash
+claude mcp add --scope user playwright -- npx @playwright/mcp
+```
 
 ### Phase 4: Wrap Up
 

@@ -72,6 +72,9 @@ echo -e "${CYAN}=== Terminal Enhancements ===${NC}"
 echo -e "${DIM}~1 min, just brew installs${NC}"
 INSTALL_POWERTOOLS=$(confirm "Install power tools? (fzf, bat, eza, jq, httpie)")
 
+echo -e "${DIM}~30 sec, Oh My Zsh plugin for quick directory jumping${NC}"
+INSTALL_ZSH_Z=$(confirm "zsh-z? (z command - jump to frequently used dirs)")
+
 echo ""
 echo -e "${CYAN}=== Optional Integrations ===${NC}"
 
@@ -80,6 +83,9 @@ INSTALL_NOTION=$(confirm "Notion integration? (Claude can search your docs)")
 
 echo -e "${DIM}~1 min, uses browser OAuth (no API keys needed)${NC}"
 INSTALL_LINEAR=$(confirm "Linear integration? (Claude can manage issues)")
+
+echo -e "${DIM}~30 sec, browser automation MCP server${NC}"
+INSTALL_PLAYWRIGHT=$(confirm "Playwright MCP? (Claude can control browsers)")
 
 echo ""
 echo -e "${CYAN}=== Developer Tools ===${NC}"
@@ -126,6 +132,7 @@ cat > config.json << EOF
     "optional_tools": {
       "karabiner": $INSTALL_KARABINER,
       "terminal_power_tools": $INSTALL_POWERTOOLS,
+      "zsh_z": $INSTALL_ZSH_Z,
       "lazygit": $INSTALL_LAZYGIT,
       "gh_cli": $INSTALL_GH,
       "browser_agent": $INSTALL_BROWSER_AGENT,
@@ -134,7 +141,8 @@ cat > config.json << EOF
       "gastown": $INSTALL_GASTOWN,
       "beads": $INSTALL_BEADS,
       "linear_mcp": $INSTALL_LINEAR,
-      "notion_mcp": $INSTALL_NOTION
+      "notion_mcp": $INSTALL_NOTION,
+      "playwright_mcp": $INSTALL_PLAYWRIGHT
     }
   },
   "preferences": {
