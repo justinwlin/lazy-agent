@@ -41,6 +41,7 @@ Claude will read your config and guide you through a personalized setup.
 ### Recommended
 - **Karabiner-Elements** - Caps Lock → Escape/Ctrl (game changer for vim/tmux)
 - **Terminal Power Tools** - fzf, bat, eza, jq, httpie
+- **zsh-z** - Quick directory jumping with `z` command
 
 ### Developer Tools
 - **lazygit** - Beautiful git TUI
@@ -51,6 +52,7 @@ Claude will read your config and guide you through a personalized setup.
 ### Optional Integrations
 - **Notion MCP** - Let Claude search your Notion docs
 - **Linear MCP** - Let Claude manage Linear issues
+- **Playwright MCP** - Let Claude control browsers for testing/automation
 - **gcalcli** - Google Calendar in terminal
 
 ### Multi-Agent Tools (Advanced)
