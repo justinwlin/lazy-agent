@@ -54,10 +54,13 @@ You have access to these skills for interactive setup. **Use them** when you rea
 | `/code-simplifier` | Simplify and refine code for clarity and maintainability |
 | `/frontend-design` | Create distinctive, production-grade frontend interfaces (plugin) |
 | `/setup-context7` | Set up Context7 MCP for up-to-date library documentation |
+| `/depot` | Build Docker images remotely with cloud-based infrastructure (plugin) |
 
-### Installing Official Plugins
+### Installing Plugins
 
-Some skills come from the official Claude plugins marketplace. Install them globally with:
+#### Official Claude Plugins
+
+Install from the official Claude plugins marketplace:
 
 ```bash
 claude plugin install <plugin-name>@claude-plugins-official
@@ -66,6 +69,18 @@ claude plugin install <plugin-name>@claude-plugins-official
 Example:
 ```bash
 claude plugin install frontend-design@claude-plugins-official
+```
+
+#### Custom Plugin Marketplaces
+
+Add a custom marketplace first, then install plugins from it:
+
+```bash
+# Add justin's tools marketplace
+claude plugin marketplace add justinwlin/justin-claude-plugins
+
+# Install depot plugin
+claude plugin install depot@justin-tools
 ```
 
 ## Configuration
