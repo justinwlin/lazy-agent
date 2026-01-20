@@ -53,6 +53,7 @@ You have access to these skills for interactive setup. **Use them** when you rea
 | `/fork` | Spawn multiple parallel Claude instances |
 | `/code-simplifier` | Simplify and refine code for clarity and maintainability |
 | `/frontend-design` | Create distinctive, production-grade frontend interfaces (plugin) |
+| `/setup-context7` | Set up Context7 MCP for up-to-date library documentation |
 
 ### Installing Official Plugins
 
@@ -109,6 +110,7 @@ ls ~/.oh-my-zsh/custom/plugins/zsh-z 2>/dev/null && echo "zsh-z: ✓" || echo "z
 claude mcp list 2>/dev/null | grep -q playwright && echo "Playwright MCP: ✓" || echo "Playwright MCP: ✗"
 claude mcp list 2>/dev/null | grep -q linear && echo "Linear MCP: ✓" || echo "Linear MCP: ✗"
 claude mcp list 2>/dev/null | grep -q notion && echo "Notion MCP: ✓" || echo "Notion MCP: ✗"
+claude mcp list 2>/dev/null | grep -q context7 && echo "Context7 MCP: ✓" || echo "Context7 MCP: ✗"
 ```
 
 **Skip steps they've already completed.** Never reinstall something that's already working.
@@ -235,6 +237,14 @@ brew install steveyegge/beads/bd
 Browser automation MCP server - lets Claude control browsers for testing and web automation.
 ```bash
 claude mcp add --scope user playwright -- npx @playwright/mcp
+```
+
+#### Context7 MCP (`optional_tools.context7_mcp`)
+**Use the `/setup-context7` skill** - fetches up-to-date library documentation for any prompt.
+
+Quick install (OAuth - recommended):
+```bash
+claude mcp add --transport http context7 https://mcp.context7.com/mcp/oauth
 ```
 
 #### clyolo (`optional_tools.claude_yolo`)

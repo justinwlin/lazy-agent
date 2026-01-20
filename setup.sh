@@ -138,6 +138,9 @@ INSTALL_LINEAR=$(confirm "Linear integration? (Claude can manage issues)" "$PREV
 echo -e "${DIM}~30 sec, browser automation MCP server${NC}"
 INSTALL_PLAYWRIGHT=$(confirm "Playwright MCP? (Claude can control browsers)")
 
+echo -e "${DIM}~30 sec, up-to-date library documentation in prompts${NC}"
+INSTALL_CONTEXT7=$(confirm "Context7 MCP? (fetches current docs for any library)")
+
 echo ""
 echo -e "${CYAN}=== Developer Tools ===${NC}"
 
@@ -211,7 +214,8 @@ cat > config.json << EOF
       "beads": $INSTALL_BEADS,
       "linear_mcp": $INSTALL_LINEAR,
       "notion_mcp": $INSTALL_NOTION,
-      "playwright_mcp": $INSTALL_PLAYWRIGHT
+      "playwright_mcp": $INSTALL_PLAYWRIGHT,
+      "context7_mcp": $INSTALL_CONTEXT7
     }
   },
   "preferences": {
