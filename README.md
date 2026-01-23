@@ -42,6 +42,7 @@ Claude will read your config and guide you through a personalized setup.
 - **Karabiner-Elements** - Caps Lock → Escape/Ctrl (game changer for vim/tmux)
 - **Terminal Power Tools** - fzf, bat, eza, jq, httpie
 - **zsh-z** - Quick directory jumping with `z` command
+- **claude-notify** - Desktop notifications when Claude finishes tasks or needs input
 
 ### Developer Tools
 - **lazygit** - Beautiful git TUI
