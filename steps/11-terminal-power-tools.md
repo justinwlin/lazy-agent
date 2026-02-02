@@ -2,11 +2,31 @@
 
 These tools take about a minute to install and make your terminal much nicer.
 
-## Installation (all at once)
+## Installation
+
+First, install the tools that always have bottles (non-Rust, small):
 
 ```bash
-brew install fzf ripgrep bat eza fd zoxide git-delta jq httpie glow
+brew install fzf jq glow
 ```
+
+Then try the Rust-based tools with `--force-bottle` to avoid slow source compilation:
+
+```bash
+brew install --force-bottle ripgrep bat eza fd zoxide git-delta httpie
+```
+
+> **Why `--force-bottle`?** Many of these tools are written in Rust. Without this flag, Homebrew may silently fall back to building from source — which can take **20+ minutes per tool**. `--force-bottle` ensures only prebuilt binaries are used and fails fast if one isn't available (common on older macOS versions).
+
+### If `--force-bottle` fails
+
+On older macOS (e.g. macOS 13 Ventura), bottles may not exist. Instead of building from source, download prebuilt binaries directly from GitHub. Run the helper script:
+
+```bash
+./steps/install-cli-tools.sh
+```
+
+This script detects your architecture, downloads the correct release binary for each tool, and installs it to `/usr/local/bin`.
 
 ## What You Get
 
