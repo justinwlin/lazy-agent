@@ -45,6 +45,7 @@ if [ -f "config.json" ] && command -v jq &> /dev/null; then
     PREV_GASTOWN=$(jq -r '.setup.optional_tools.gastown // false' config.json)
     PREV_BEADS=$(jq -r '.setup.optional_tools.beads // false' config.json)
     PREV_MPROCS=$(jq -r '.setup.optional_tools.mprocs // false' config.json)
+    PREV_RTK=$(jq -r '.setup.optional_tools.rtk // false' config.json)
 elif [ -f "config.json" ]; then
     echo -e "${YELLOW}Found config.json but jq not installed. Starting fresh.${NC}"
     echo -e "${DIM}Install jq to preserve previous choices: brew install jq${NC}"
@@ -171,6 +172,9 @@ INSTALL_CLAUDE_NOTIFY=$(confirm "claude-notify? (Desktop notifications when Clau
 echo -e "${DIM}~1 min, npx install${NC}"
 INSTALL_GSD=$(confirm "Get Shit Done? (Meta-prompting for structured projects)" "$PREV_GSD")
 
+echo -e "${DIM}~1 min, saves 60-90% tokens on CLI output${NC}"
+INSTALL_RTK=$(confirm "RTK? (token-optimized CLI proxy for Claude Code)" "$PREV_RTK")
+
 echo ""
 echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"
 echo -e "${DIM}For coordinating multiple Claude sessions${NC}"
@@ -209,6 +213,7 @@ cat > config.json << EOF
       "claude_yolo": $INSTALL_CLAUDE_YOLO,
       "claude_notify": $INSTALL_CLAUDE_NOTIFY,
       "get_shit_done": $INSTALL_GSD,
+      "rtk": $INSTALL_RTK,
       "mprocs": $INSTALL_MPROCS,
       "gastown": $INSTALL_GASTOWN,
       "beads": $INSTALL_BEADS,
@@ -242,6 +247,7 @@ TOTAL_TIME=10
 # clyolo is just an alias, negligible time
 [ "$INSTALL_CLAUDE_NOTIFY" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_GSD" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_RTK" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_MPROCS" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_GASTOWN" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_BEADS" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))

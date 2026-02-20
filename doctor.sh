@@ -114,6 +114,7 @@ else
     echo -e "  ${YELLOW}○${NC} clyolo alias ${DIM}- add to ~/.zshrc: alias clyolo=\"claude --dangerously-skip-permissions\"${NC}"
 fi
 check "claude-notify" "cn" "brew install mylee04/tap/claude-notify (optional)"
+check "RTK" "rtk" "brew install rtk (recommended - saves 60-90% tokens)"
 
 echo ""
 echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"
