@@ -115,6 +115,22 @@ else
 fi
 check "claude-notify" "cn" "brew install mylee04/tap/claude-notify (optional)"
 check "RTK" "rtk" "brew install rtk (recommended - saves 60-90% tokens)"
+check "GSD 2" "gsd" "npm install -g gsd-pi (optional)"
+
+echo ""
+echo -e "${CYAN}=== AI Agent Tools ===${NC}"
+# just-bash is a per-project npm package, check if npx can find it
+if npx just-bash --version &>/dev/null 2>&1; then
+    echo -e "  ${GREEN}✓${NC} just-bash ${DIM}(npm package)${NC}"
+else
+    echo -e "  ${YELLOW}○${NC} just-bash ${DIM}- npm install just-bash (per-project, optional)${NC}"
+fi
+# GSD v1 check
+if [ -d "$HOME/.claude/commands" ] && ls "$HOME/.claude/commands"/gsd* &>/dev/null 2>&1; then
+    echo -e "  ${GREEN}✓${NC} Get Shit Done v1 ${DIM}(slash commands)${NC}"
+else
+    echo -e "  ${YELLOW}○${NC} Get Shit Done v1 ${DIM}- npx get-shit-done-cc@latest (optional)${NC}"
+fi
 
 echo ""
 echo -e "${CYAN}=== Multi-Agent Tools ===${NC}"

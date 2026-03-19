@@ -97,6 +97,9 @@ Read these in order (skip completed steps):
 15. `steps/15-claude-notify.md` - Desktop notifications for long tasks **[RECOMMENDED]**
 16. `steps/16-get-shit-done.md` - Meta-prompting system for structured projects **[OPTIONAL]**
 17. `steps/17-fork.md` - Parallel Claude instances with /fork **[QUICK]**
+19. `steps/19-just-bash.md` - Sandboxed bash for AI agents **[RECOMMENDED]**
+20. `steps/20-get-shit-done.md` - GSD v1 meta-prompting system **[RECOMMENDED]**
+21. `steps/21-gsd-2.md` - GSD 2 autonomous coding agent **[OPTIONAL]**
 
 ### Handling Optional vs Quick Steps
 
@@ -163,8 +166,14 @@ grep -q 'alias clyolo' ~/.zshrc && echo "clyolo: configured"
 # claude-notify
 which cn && cn status
 
-# get-shit-done
+# just-bash
+npx just-bash -c 'echo "working"'
+
+# get-shit-done (v1)
 # Verify by running /gsd:help in Claude Code
+
+# gsd-2
+which gsd && gsd --version
 ```
 
 ## Handling Problems

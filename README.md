@@ -50,6 +50,11 @@ Claude will read your config and guide you through a personalized setup.
 - **Browser Agent** - AI-friendly browser automation
 - **Docker** - Container runtime
 
+### AI Agent Development
+- **just-bash** - Sandboxed bash environment for AI agents (virtual filesystem, 100+ commands)
+- **Get Shit Done (GSD)** - Meta-prompting and spec-driven development for Claude Code
+- **GSD 2** - Autonomous coding agent CLI (evolution of GSD, walk-away execution)
+
 ### Optional Integrations
 - **Notion MCP** - Let Claude search your Notion docs
 - **Linear MCP** - Let Claude manage Linear issues

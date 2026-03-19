@@ -41,7 +41,9 @@ if [ -f "config.json" ] && command -v jq &> /dev/null; then
     PREV_GCALCLI=$(jq -r '.setup.optional_tools.gcalcli // false' config.json)
     PREV_YOLO=$(jq -r '.setup.optional_tools.claude_yolo // false' config.json)
     PREV_NOTIFY=$(jq -r '.setup.optional_tools.claude_notify // false' config.json)
-    PREV_GSD=$(jq -r '.setup.optional_tools.get_shit_done // false' config.json)
+    PREV_JUST_BASH=$(jq -r '.setup.optional_tools.just_bash // false' config.json)
+    PREV_GSD_V1=$(jq -r '.setup.optional_tools.gsd_v1 // .setup.optional_tools.get_shit_done // false' config.json)
+    PREV_GSD_2=$(jq -r '.setup.optional_tools.gsd_2 // false' config.json)
     PREV_GASTOWN=$(jq -r '.setup.optional_tools.gastown // false' config.json)
     PREV_BEADS=$(jq -r '.setup.optional_tools.beads // false' config.json)
     PREV_MPROCS=$(jq -r '.setup.optional_tools.mprocs // false' config.json)
@@ -169,8 +171,14 @@ INSTALL_CLAUDE_YOLO=$(confirm "clyolo alias? (claude --dangerously-skip-permissi
 echo -e "${DIM}~1 min, Homebrew install${NC}"
 INSTALL_CLAUDE_NOTIFY=$(confirm "claude-notify? (Desktop notifications when Claude finishes)" "$PREV_NOTIFY")
 
+echo -e "${DIM}~1 min, npm package for AI agent projects${NC}"
+INSTALL_JUST_BASH=$(confirm "just-bash? (Sandboxed bash environment for AI agents)" "$PREV_JUST_BASH")
+
 echo -e "${DIM}~1 min, npx install${NC}"
-INSTALL_GSD=$(confirm "Get Shit Done? (Meta-prompting for structured projects)" "$PREV_GSD")
+INSTALL_GSD_V1=$(confirm "Get Shit Done v1? (Meta-prompting slash commands for Claude Code)" "$PREV_GSD_V1")
+
+echo -e "${DIM}~1 min, standalone CLI agent${NC}"
+INSTALL_GSD_2=$(confirm "GSD 2? (Autonomous coding agent - evolution of GSD v1)" "$PREV_GSD_2")
 
 echo -e "${DIM}~1 min, saves 60-90% tokens on CLI output${NC}"
 INSTALL_RTK=$(confirm "RTK? (token-optimized CLI proxy for Claude Code)" "$PREV_RTK")
@@ -212,7 +220,9 @@ cat > config.json << EOF
       "gcalcli": $INSTALL_GCALCLI,
       "claude_yolo": $INSTALL_CLAUDE_YOLO,
       "claude_notify": $INSTALL_CLAUDE_NOTIFY,
-      "get_shit_done": $INSTALL_GSD,
+      "just_bash": $INSTALL_JUST_BASH,
+      "gsd_v1": $INSTALL_GSD_V1,
+      "gsd_2": $INSTALL_GSD_2,
       "rtk": $INSTALL_RTK,
       "mprocs": $INSTALL_MPROCS,
       "gastown": $INSTALL_GASTOWN,
@@ -246,7 +256,9 @@ TOTAL_TIME=10
 [ "$INSTALL_GCALCLI" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 7))
 # clyolo is just an alias, negligible time
 [ "$INSTALL_CLAUDE_NOTIFY" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
-[ "$INSTALL_GSD" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_JUST_BASH" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_GSD_V1" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
+[ "$INSTALL_GSD_2" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 2))
 [ "$INSTALL_RTK" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_MPROCS" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
 [ "$INSTALL_GASTOWN" = "true" ] && TOTAL_TIME=$((TOTAL_TIME + 1))
